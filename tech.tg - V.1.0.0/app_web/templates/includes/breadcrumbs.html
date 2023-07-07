@@ -1,0 +1,15 @@
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>{% block bread %}{% endblock bread %}</h2>
+            <ol>
+              <li><a href="{% url 'index'%}">Home</a></li>
+              <li>{% block bread1 %}{% endblock bread %}</li>
+            </ol>
+          </div>
+  
+        </div>
+      </div><!-- End Breadcrumbs -->
+      

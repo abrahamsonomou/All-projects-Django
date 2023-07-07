@@ -1,0 +1,18 @@
+            <div class="sidebar-item recent-posts">
+                <h3 class="sidebar-title">Recents Tutoriels</h3>
+  
+                <div class="mt-3">
+  
+               {% for tutoriel in recent_tutoriels %}
+                  <div class="post-item">
+                  <img src="{{tutoriel.image.url}}" alt="" class="img-fluid">
+                    <div>
+                      <h4><a href="{% url 'detail_tutoriel' tutoriel.slug %}">{{tutoriel.titre|truncatechars:30}}</a></h4>
+                      <time datetime="2020-01-01">Publié il y a {{tutoriel.plublish|timesince}}</time>
+                    </div>
+                  </div><!-- End recent post item-->
+                  {% endfor %}
+                </div>
+  
+              </div><!-- End sidebar recent posts-->
+  

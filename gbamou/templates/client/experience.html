@@ -1,0 +1,91 @@
+{% load static %}
+        <!-- ==================== experience-section start ==================== -->
+        <div data-scroll='6' class="experience-section sec-p100-bg-bs mb-30 clearfix" id="exprience">
+
+            <div class="Section-title">
+                <h2>
+					<i class="fa fa-pencil" aria-hidden="true"></i>
+					Experience professionnelle
+				</h2>
+                <span>Experience professionnelle</span>
+                {% for info in infos %}
+                {% if info.experience %}
+                <p>{{info.experience.html|safe}}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- /.Section-title -->
+
+            <div class="row">
+                {% if experiences %}
+
+                <div class="col l8 m12 s12">
+                    <div class="experience-left">
+                        <div class="experience-left-item-area">
+                            <div class="border-left">
+                                {% for experience in experiences %}
+
+                                <div class="experience-item exp1">
+                                    <h2 class="title">{{experience.post}}</h2>
+                                    <ul class="post-mate ul-li">
+                                        <li class="photoshop-color">{{experience.periode}}</li>
+                                        {% comment %} <li class="photoshop-color">{{experience.periode}} <span class="current photoshop-bg">Current</span></li> {% endcomment %}
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                    <p>{{experience.description.html|safe}}</p>
+                                    <a href="{% if experience.lien %}{{experience.lien}}{% else %}#!{% endif %}" class="photoshop-color">{{experience.entreprise}}</a>
+                                </div>
+                                <!-- /.experience-item -->
+                                {% endfor %}
+
+                            </div>
+                            <!-- border-left -->
+                        </div>
+                        <!-- /.experience-left-item-area -->
+
+                    </div>
+                    <!-- /.experience-left -->
+                </div>
+                <!-- colm8 -->
+                {% endif %}
+
+                <div class="col l4 m12 s12">
+                    <div class="experience-right">
+
+                        <div class="achivement">
+                            <h2 class="title">
+								<span class="thumb achived-color">
+									<i class="fa fa-trophy" aria-hidden="true"></i>
+								</span>
+								<!-- /.thumb -->
+								{{certs|length}} Certifications
+							</h2>
+                        </div>
+                        <!-- /.achivement -->
+
+                        {% for cert in certs %}
+                        <div class="achivement">
+                            <h2 class="title">
+								<span class="thumb">
+									{{cert.numero}}
+								</span>
+								<!-- /.thumb -->
+								{{cert.titre}}
+							</h2>
+                            <p>
+                                {{cert.description}}
+                            </p>
+                        </div>
+                        <!-- /.achivement -->
+                        {% endfor %}
+
+                    </div>
+                    <!-- /.experience-right -->
+                </div>
+                <!-- col m4 -->
+            </div>
+            <!-- row -->
+
+        </div>
+        <!-- /.experience-section -->
+        <!-- ==================== experience-section end ==================== -->

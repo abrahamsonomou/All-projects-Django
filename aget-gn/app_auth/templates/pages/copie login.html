@@ -1,0 +1,96 @@
+
+{% extends 'includes/_base_auth_client.html' %}
+{% block title %}Se connecter{% endblock title %}
+{% block content %}
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h4>Login</h4>
+              </div>
+              <div class="card-body">
+
+                <form action="" method="POST" class="needs-validation" novalidate="">
+                {% csrf_token %}
+                {% if messages %}
+                {% for message in messages %}
+                  <div class="alert alert-danger text-center">
+                      <strong>{{message}}</strong>
+                  </div>
+                {% endfor %}
+              {% endif %}
+
+                  <div class="form-group">
+                    <label for="email">Username</label>
+                    {% if form.username.errors %}
+                    {% for error in form.username.errors %}
+                    <div class="div-error-{{form.username.name}}">
+                    <small class="text-danger">{{error}}</small>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {{form.username}}
+                    <div class="invalid-feedback">
+                      Veuilez saisir le nom d'utilisateur
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="d-block">
+                      <label for="password" class="control-label">Password</label>
+                      <div class="float-right">
+                        <a href="{% url 'forgot_password' %}" class="text-small">
+                          Forgot Password?
+                        </a>
+                      </div>
+                    </div>
+                    {% if form.username.errors %}
+                    {% for error in form.password.errors %}
+                    <div class="div-error-{{form.password.name}}">
+                    <small class="text-danger">{{error}}</small>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {{form.password}}
+                    <div class="invalid-feedback">
+                      Veuilez saisir le password
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
+                      <label class="custom-control-label" for="remember-me">Remember Me</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
+                      Login
+                    </button>
+                  </div>
+                </form>
+                <div class="text-center mt-4 mb-3">
+                  <div class="text-job text-muted">Login With Social</div>
+                </div>
+                <div class="row sm-gutters">
+                  <div class="col-6">
+                    <a class="btn btn-block btn-social btn-facebook">
+                      <span class="fab fa-facebook"></span> Facebook
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a class="btn btn-block btn-social btn-twitter">
+                      <span class="fab fa-twitter"></span> Twitter
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5 text-muted text-center">
+              Don't have an account? <a href="{% url 'register' %}">Create One</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock content %}

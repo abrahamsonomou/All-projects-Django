@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- auth-login.html  21 Nov 2019 03:49:32 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>{% block title %}{% endblock title %}</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets-aget/css/app.min.css' %} ">
+  <link rel="stylesheet" href="{% static 'assets-aget/bundles/bootstrap-social/bootstrap-social.css' %} ">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{% static 'assets-aget/css/style.css' %} ">
+  <link rel="stylesheet" href="{% static 'assets-aget/css/components.css' %} ">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="{% static 'assets-aget/css/custom.css' %} ">
+  <link rel='shortcut icon' type='image/x-icon' href='assets-aget/img/favicon.ico' />
+</head>
+
+<body>
+  <div class="loader"></div>
+  <div id="app">
+
+    {% comment %} block utilise pour le contenu de chaque page {% endcomment %}
+    {% block content %}{% endblock content %}
+
+    
+  </div>
+  <!-- General JS Scripts -->
+  <script src="{% static 'assets-aget/js/app.min.js' %}"></script>
+  <!-- JS Libraies -->
+  <!-- Page Specific JS File -->
+  <!-- Template JS File -->
+  <script src="{% static 'assets-aget/js/scripts.js' %} "></script>
+  <!-- Custom JS File -->
+  <script src="{% static 'assets-aget/js/custom.js' %} "></script>
+</body>
+<script>
+  $(document).ready(function(){
+    $('input').keyup(function(){
+      let textSaiai=$(this).val();
+      let attrName=$(this).attr('name');
+      let validatorElement=".div-error-"+attrName;
+      if(textSaiai===""){
+        if(!$(this).hasClass('is-invalid')){
+          $(this).addClass('is-invalid');
+          $(validatorElement).show();
+        }
+      }else {
+        $(this).removeClass('is-invalid')
+        $(validatorElement).hide();
+      }
+    })
+  })
+  </script>
+
+{% comment %} <!-- auth-login.html  21 Nov 2019 03:49:32 GMT --> {% endcomment %}
+</html>

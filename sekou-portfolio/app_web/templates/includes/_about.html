@@ -1,0 +1,51 @@
+{% load static %}
+{% for info in infos %}
+
+  <section id="about" class="about">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>A propos de moi</h2>
+</p>
+  </div>
+      
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          {% if info.photo %}
+          <img class="w-100 img-fluid mb-4" src="{{info.photo.url}}" alt="Image">
+          {% else %}
+          <img class="w-100 img-fluid mb-4" src="{% static 'assets-portfolio/img/profile-img.jpeg' %}" class="img-fluid" alt="">
+          {% endif %}
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3>{{info.nom}}</h3>
+          <blockquote>
+            {{info.apropos}}
+          </blockquote>
+          <div class="row">
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Naissance:</strong> <span>{% if info.naissance %}{{info.naissance}}{% endif %}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Site web:</strong> <span><a href="{% if info.site %}{{info.site}}{% else %}#!{% endif %}" {% if info.site %}target="_blank"{% endif %} >{% if info.site %}{{info.site}}{% endif %}</a></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Telephone:</strong> <span>{% if info.phone %}{{info.phone}}{% endif %}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Addresse:</strong> <span>{% if info.address %}{{info.address}}{% endif %}</span></li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li><i class="bi bi-chevron-right"></i> <strong>Grade:</strong> <span>{{info.grade}}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Année d'expérience:</strong> <span>{{info.experience}}</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><a href="mailto:{% if info.email %}{{info.email}}{% endif %}">{% if info.email %}{{info.email}}{% endif %}</a></span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Fonction:</strong> <span>{% if info.disponibilite %}{{info.disponibilite}}{% endif %}</span></li>
+              </ul>
+            </div>
+            <p>Voici mon CV qui resume mon parcours <a href="{% url 'cv' %}" target="_blank" class="btn btn-secondary">Cliquez-ici!</span></a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+
+{% endfor %}

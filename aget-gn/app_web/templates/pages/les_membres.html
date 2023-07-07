@@ -1,0 +1,79 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Listes des membres  | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Les membres de l'AGET</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped" id="table-1">
+                  <thead>
+                    <tr>
+                      
+                      <th>Nom</th>
+                      <th>Telephone</th>
+                      <th>Email</th>
+                      <th>Adresse</th>
+                      <th>Formation</th>
+                      <th>Université/Ecole</th>
+                      <th>Specialité</th>
+                      <th>Naissance</th>
+                      <th class="text-center"> Année</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for membre in list_membres %}
+                    {% if membre.is_membre %}
+                    <tr>
+                      <td>
+                        {% if membre.photo %}
+                        <img alt="image" src="{{membre.photo.url}}" width="35">
+                      {% else %}
+                        <img alt="image" src="{% static 'assets-aget/img/users/default-avatar.png' %}" width="35">
+                     {% endif %} 
+                        {{membre.last_name}} {{membre.first_name}}
+                        <div class="table-links">
+                          <a href="#">View</a>
+                          {% if has_perm_change %}
+                          <div class="bullet"></div>
+                          <a href="#">Edit</a>
+                          {% endif %}
+                          {% if has_perm_delete %}
+                          <div class="bullet"></div>
+                          <a href="#" class="text-danger">Trash</a>
+                        </div>
+                        {% endif %}
+                      </td>
+                      <td>{{membre.telephone}}</td>
+                      <td>
+                        {{membre.email}}
+                      </td>
+                      <td>
+                        {{membre.adresse}}
+                      </td>
+                      <td>{{membre.formation}}</td>
+                      <td>{{membre.ecole}}</td>
+                      <td>{{membre.specialite}}</td>
+                      <td>{{membre.date_naissance}}</td>
+                      <td>{{membre.annee}}</td>
+                    </tr>
+                    {% endif %} 
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+
+ 

@@ -1,0 +1,115 @@
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="footer-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="footer-info">
+                  <h3>SONOMOU.TECH</h3>
+                  <p>
+                    A108 Agbalepedo <br />
+                    Lome, TOGO<br /><br />
+                    <strong>Phone:</strong> +228 70 02 69 94<br />
+                    <strong>Email:</strong><a href="mailto:contact@sonomou.tech">contact@sonomou.tech</a><br />
+                  </p>
+                </div>
+              </div>
+  
+              <div class="col-lg-2 col-md-6 footer-links">
+                <h4>Liens du site</h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="{% url 'index' %}">Home</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="{% url 'about'%}">About</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="{% url 'team'%}">Team</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="{% url 'blog'%}">Blog</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="col-lg-3 col-md-6 footer-links">
+                <h4>Liens utils</h4>
+                <ul>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="https://grafikart.fr/" target="_blank">grafikart</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="https://openclassrooms.com/" target="_blank">openclassrooms</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="https://www.pierre-giraud.com/" target="_blank">pierre-giraud</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i> <a href="https://getfreecourses.co/" target="_blank">getfreecourses</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-chevron-right"></i>
+                    <a href="https://waytolearnx.com/" target="_blank">waytolearnx</a>
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="col-lg-4 col-md-6 footer-newsletter">
+                <h4>Our Newsletter</h4>
+                <p>
+                  Abonnez-vous pour recevoir nos nouveaux tutoriels, formations et articles.
+                </p>
+                {% if messages %}
+                {% for message  in messages %}
+                <div {% if message.tags %} class="{{message.tags}}" {% endif %}>
+                    {{message}}
+                </div>
+                {% endfor %}
+                {% endif %} 
+
+                {% comment %} {% else %}  {% endcomment %}
+                <form action="/newletter" method="post">
+                  {% csrf_token %}
+                  {% comment %} {{form.email}}  {% endcomment %}
+                  <input type="email" name="email" required />
+                  <input type="submit" value="Subscribe"/>
+                </form>
+              </div>
+              </div>
+          </div>
+          </div>
+        </div>
+  
+        <div class="footer-legal text-center">
+          <div
+            class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center"
+          >
+            <div
+              class="d-flex flex-column align-items-center align-items-lg-start"
+            >
+              <div class="copyright">
+                Copyright &copy; <script>document.write(new Date().getFullYear());</script> 
+                <strong><span>SONOMOU.TECH</span></strong
+                  >. All Rights Reserved
+
+                &copy; Copyright <strong><span>SONOMOU.TECH</span></strong
+                >. All Rights Reserved 
+              </div>
+            </div>
+  
+            <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Footer -->
+

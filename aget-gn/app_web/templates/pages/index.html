@@ -1,0 +1,146 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Acceuil | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    {% comment %} <div class="row ">
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card">
+          <div class="card-statistic-4">
+            <div class="align-items-center justify-content-between">
+              <div class="row ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                  <div class="card-content">
+                    <h5 class="font-15">Membres</h5>
+                    <h2 class="mb-3 font-18">{{list_membres|length}}</h2>
+                    <p class="mb-0"><span class="col-green"></span> 
+                        <a href="{% url 'membres' %}">En savoir plus</a> </p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                  <div class="banner-img">
+                    <img src="{% static 'assets/img/banner/1.png' %} " alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card">
+          <div class="card-statistic-4">
+            <div class="align-items-center justify-content-between">
+              <div class="row ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                  <div class="card-content">
+                    <h5 class="font-15"> Articles</h5>
+                    <h2 class="mb-3 font-18">{{list_articles|length}}</h2>
+                    <p class="mb-0"><span class="col-orange">09%</span> Decrease</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                  <div class="banner-img">
+                    <img src="{% static 'assets/img/banner/2.png' %} " alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card">
+          <div class="card-statistic-4">
+            <div class="align-items-center justify-content-between">
+              <div class="row ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                  <div class="card-content">
+                    <h5 class="font-15">Evenements</h5>
+                    <h2 class="mb-3 font-18">{{list_event|length}}</h2>
+                    <p class="mb-0"><span class="col-green">18%</span>
+                      Increase</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                  <div class="banner-img">
+                    <img src="{% static 'assets/img/banner/3.png' %} " alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="card">
+          <div class="card-statistic-4">
+            <div class="align-items-center justify-content-between">
+              <div class="row ">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pr-0 pt-3">
+                  <div class="card-content">
+                    <h5 class="font-15">Auteurs</h5>
+                    <h2 class="mb-3 font-18">
+                        {% if list_membres.is_auteur %}
+                        {{list_membres|length}}
+                        {% endif %}
+                    </h2>
+                    <p class="mb-0"><span class="col-green">42%</span> Increase</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 pl-0">
+                  <div class="banner-img">
+                    <img src="{% static 'assets/img/banner/4.png' %} " alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> {% endcomment %}
+    <div class="row">
+      <div class="col-12 col-sm-12 col-lg-12">
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4>Les membres du bureau de l'AGET</h4>
+            {% comment %} <div class="card-header-action">
+              <a href="#" class="btn btn-danger btn-icon icon-right">View All <i
+                  class="fas fa-chevron-right"></i></a>
+            </div> {% endcomment %}
+          </div>
+          {% if membres_bureau|length %}
+
+          <div class="card-body">
+            <div class="owl-carousel owl-theme" id="users-carousel">
+                {% for membre in membres_bureau%}
+              <div>
+                <div class="user-item">
+                  {% if membre.membre.photo %}
+                  <img alt="image" src="{{membre.membre.photo.url}}" class="img-fluid">
+                  {% else %}
+                  <img alt="image" src="{% static 'assets-aget/img/users/default-avatar.png' %}" class="img-fluid">
+                 {% endif %} 
+
+                  <div class="user-details">
+                    <div class="user-name">{{membre.membre.first_name}} {{membre.membre.last_name}} </div>
+                    <div class="text-job text-muted">{{membre.fonction}}</div>
+                    <div class="user-cta">
+                        <button class="btn btn-primary">{{membre.memdat}}</button>
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+
+ 

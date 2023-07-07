@@ -1,0 +1,101 @@
+{% extends 'includes/_base_client.html' %}
+{% load static %}
+{% block title %}rcherche article{% endblock title %}
+{% block titre %}Blog{% endblock titre %}
+{% block titre1 %}Blog{% endblock titre1 %}
+{% block back %}url('{% static 'assets-client/img/blog-header.jpg' %}'){% endblock back %}
+{% block content %}
+
+
+   <!-- ======= Blog Section ======= -->
+   <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row g-5">
+
+        <div class="col-lg-8">
+
+          <div class="row gy-4 posts-list">
+
+{% for article in liste_article %}
+            <div class="col-lg-6">
+              <article class="d-flex flex-column">
+
+                <div class="post-img">
+                  <img src="{{article.image.url}}" alt="" class="img-fluid">
+                </div>
+
+                <h2 class="title">
+                  <a href="{% url 'detail_article' article.slug %}">{{article.titre|truncatechars:30}}</a>
+                </h2>
+
+                <div class="meta-top">
+                    <ul>
+                        <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'detail_article' article.slug %}">{{article.auteur}}</a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'detail_article' article.slug %}">{{article.plublish|timesince|truncatechars:15}}</time></a></li>
+                        <li class="d-flex align-items-center"><i class="bi bi-clipboard-check"></i> <a href="{% url 'detail_article' article.slug %}"><a href="#"> {{article.categorie}}</a></a></li>
+                      </ul>
+                </div>
+
+                <div class="content">
+                  <p>
+                      {{article.desc1|truncatechars:100}}
+                  </p>
+                </div>
+
+                <div class="read-more mt-auto align-self-end">
+                  <a href="{% url 'detail_article' article.slug %}">Read More ...</a>
+                </div>
+
+              </article>
+            </div><!-- End post list item -->
+
+            {% endfor %}
+          </div><!-- End blog posts list -->
+        
+          {% if liste_article|length  %}
+          <!-- Pagination -->
+          {% include "includes/_pagination.html" with page=liste_article %}
+
+          {% else %}
+              <!-- ======= Blog Section ======= -->
+        <section class="inner-page">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>Aucun article trouvé</h2>
+            {% comment %} <p>Example inner page template</p> {% endcomment %}
+          </div>
+        </div>
+      </section><!-- End Inner Page -->
+          {% endif %}
+   
+        </div>
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+
+                {% comment %} recherche {% endcomment %}
+                {% include 'includes/recherche.html' %}
+
+                {% comment %} categorie {% endcomment %}
+                {% include 'includes/cat.html' %}
+
+                {% comment %} recents articles {% endcomment %}
+                {% include 'includes/recent_articles.html' %}
+
+                {% comment %} tag {% endcomment %}
+                {% include 'includes/tag.html' %}
+
+          </div><!-- End Blog Sidebar -->
+
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Blog Section -->
+
+  
+{% endblock content %}

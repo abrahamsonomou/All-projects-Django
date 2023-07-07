@@ -1,0 +1,48 @@
+{% extends 'includes/_base_pages.html' %}
+{% block title %}SONOMOU.TECH - Team{% endblock title %}
+{% block bread1 %}Team{% endblock bread1 %}
+{% block bread2 %}Team{% endblock bread2 %}
+
+{% block content %}
+{% load static %}
+
+{% if nb_team %}
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>Notre Equipe</h2>
+            {% comment %} <p>Architecto nobis eos vel nam quidem vitae temporibus voluptates qui hic deserunt iusto omnis nam voluptas asperiores sequi tenetur dolores incidunt enim voluptatem magnam cumque fuga.</p> {% endcomment %}
+          </div>
+  
+          <div class="row gy-5">
+  
+            {% for team in list_teams %}
+            <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+              <div class="team-member">
+                <div class="member-img">
+                  <img src="{{team.photo.url}}" class="img-fluid" alt="">
+                </div>
+                <div class="member-info">
+                  <div class="social">
+                    <a href="{{team.twitter}}"><i class="bi bi-twitter"></i></a>
+                    <a href="{{team.facebook}}"><i class="bi bi-facebook"></i></a>
+                    <a href="{{team.instagram}}"><i class="bi bi-instagram"></i></a>
+                    <a href="{{team.linkdin}}"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                  <h4>{{team.nom}}</h4>
+                  <span>{{team.specialite}}</span>
+                </div>
+              </div>
+            </div><!-- End Team Member -->
+            {% endfor %}
+  
+          </div>
+  
+        </div>
+      </section><!-- End Team Section -->
+      {% endif %}
+  
+{% endblock content %}

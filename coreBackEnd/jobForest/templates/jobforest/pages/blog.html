@@ -1,0 +1,562 @@
+{% extends 'jobforest/includes/_base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock title %}
+{% block header %}
+		<!--************************************
+				breadcrumbarea start
+		*************************************-->
+		<div class="jf-breadcrumbarea">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<ol class="jf-breadcrumb">
+							<li><a href="{% url 'jobforestHome' %}">Home</a></li>
+							<li class="jf-active">Blog</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				breadcrumbarea End
+		*************************************-->
+{% endblock header %}
+{% block content %}
+<!--************************************
+    Blog Grid Start
+*************************************-->
+<div class="jf-sectionspace">
+    <div class="container">
+        <div class="row">
+            <div id="jf-twocolumns" class="jf-twocolumns">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 pull-right">
+                    <div id="jf-content" class="jf-content">
+                        <div class="jf-innersectionhead">
+                            <div class="jf-title">
+                                <h2>Latest Blogs &amp; News</h2>
+                                <span>Stay Updated With Our Latest News</span>
+                            </div>
+                        </div>
+                        <div class="jf-sortandview">
+                            <div class="jf-views">
+                                <ul>
+                                    <li><a href="javascript:void(0);"><i class="fa fa-th-large"></i></a></li>
+                                    <li class="jf-active"><a href="javascript:void(0);"><i class="lnr lnr-menu"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="jf-sortby">
+                                <span>Sort by:</span>
+                                <div class="jf-select">
+                                    <select>
+                                        <option value="Most Recent">Most Recent</option>
+                                        <option value="Most Recent">Most Recent2</option>
+                                        <option value="Most Recent">Most Recent3</option>
+                                    </select>
+                                </div>
+                                <div class="jf-select">
+                                    <select>
+                                        <option value="Most Recent">30 Per Page</option>
+                                        <option value="Most Recent">10 Per Page</option>
+                                        <option value="Most Recent">20 Per Page</option>
+                                        <option value="Most Recent">40 Per Page</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jf-posts jf-postsgrid">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-01.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-01.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="{% url 'jobforestBlogDetails' %}">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-02.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-02.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-03.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-03.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-04.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-01.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-05.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-01.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-06.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-01.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-07.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-01.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-08.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-01.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-09.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-01.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 float-left">
+                                    <article class="jf-newsarticle">
+                                        <figure class="jf-newsimg">
+                                            <span class="jf-posttag"><i class="fas fa-ellipsis-v"></i></span>
+                                            <img src="{% static 'assets-jobforest/images/bloggrid/img-10.jpg' %}" alt="image description">
+                                        </figure>
+                                        <div class="jf-postauthorname">
+                                            <figure class="jf-postauthorpic">
+                                                <img src="{% static 'assets-jobforest/images/bloggrid/author-img-02.jpg' %}" alt="image description">
+                                            </figure>
+                                            <div class="jf-articlecontent">
+                                                <div class="jf-articletitle">
+                                                    <h3><a href="javascript:void(0);">Always Take A Professional Help</a></h3>
+                                                </div>
+                                                <span class="jf-authorname">Emil Occhipinti</span>
+                                            </div>
+                                        </div>
+                                        <ul class="jf-postarticlemeta">
+                                            <li>
+                                                <i class="lnr lnr-calendar-full"></i>
+                                                <span>Apr 23, 2019</span>
+                                            </li>
+                                            <li>
+                                                <i class="lnr lnr-tag"></i>
+                                                <span>Lifestyle &amp; DIY</span>
+                                            </li>
+                                        </ul>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <nav class="jf-pagination">
+                            <ul>
+                                <li class="jf-prevpage"><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                                <li><a href="#">Previous</a></li>
+                                <li class="jf-active"><a href="#">01</a></li>
+                                <li><a href="#">02</a></li>
+                                <li><a href="#">03</a></li>
+                                <li><a href="#">04</a></li>
+                                <li><a href="#">05</a></li>
+                                <li><a href="#">Next</a></li>
+                                <li class="jf-nextpage"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
+                    <aside id="jf-sidebar" class="jf-sidebar">
+                        <div class="jf-widget jf-widgetsearch">
+                            <div class="jf-widgettitle">
+                                <h3>Start Search Here</h3>
+                            </div>
+                            <div class="jf-widgetcontent">
+                                <form class="jf-formtheme">
+                                    <fieldset>
+                                        <div class="form-group jf-inputwithicon">
+                                            <i class="lnr lnr-magnifier"></i>
+                                            <input type="search" name="search" class="form-control" placeholder="Search Here">
+                                        </div>
+                                        <button class="jf-btn" type="button">Search Now</button>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="jf-widget jf-categories">
+                            <div class="jf-widgettitle">
+                                <h3>Categories</h3>
+                            </div>
+                            <div class="jf-checkboxgroup">
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-salesexecutive" name="bycondition" value="Sales Executive">
+                                    <label for="jf-salesexecutive">
+                                        <span>Sales Executive</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-graphicdesigner" name="bycondition" value="Graphic Designer" checked="">
+                                    <label for="jf-graphicdesigner">
+                                        <span>Graphic Designer</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-marketingexecutive" name="bycondition" value="Marketing Executive">
+                                    <label for="jf-marketingexecutive">
+                                        <span>Marketing Executive</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-accountant" name="bycondition" value="Accountant">
+                                    <label for="jf-accountant">
+                                        <span>Accountant</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-salesmarketingexecutive" name="bycondition" value="Sales / Marketing Executive">
+                                    <label for="jf-salesmarketingexecutive">
+                                        <span>Sales / Marketing Executive</span>
+                                    </label>
+                                </span>
+                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
+                            </div>
+                        </div>
+                        <div class="jf-widget jf-archives">
+                            <div class="jf-widgettitle">
+                                <h3>Archives</h3>
+                            </div>
+                            <div class="jf-checkboxgroup">
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-april" name="bycondition" value="April 2019">
+                                    <label for="jf-april">
+                                        <span>April 2019</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-march" name="bycondition" value="March 2019"  checked="">
+                                    <label for="jf-march">
+                                        <span>March 2019</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-february" name="bycondition" value="February 2019">
+                                    <label for="jf-february">
+                                        <span>February 2019</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-january" name="bycondition" value="January 2019">
+                                    <label for="jf-january">
+                                        <span>January 2019</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-april2019" name="bycondition" value="April 2019">
+                                    <label for="jf-april2019">
+                                        <span>April 2019</span>
+                                    </label>
+                                </span>
+                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
+                            </div>
+                        </div>
+                        <div class="jf-widget jf-meta">
+                            <div class="jf-widgettitle">
+                                <h3>Meta</h3>
+                            </div>
+                            <div class="jf-checkboxgroup">
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-login" name="bycondition" value="Log in">
+                                    <label for="jf-login">
+                                        <span>Log in</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-entriesrss" name="bycondition" value="Entries RSS"  checked="">
+                                    <label for="jf-entriesrss">
+                                        <span>Entries RSS</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-commentsrss" name="bycondition" value="Comments RSS">
+                                    <label for="jf-commentsrss">
+                                        <span>Comments RSS</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-wordpress" name="bycondition" value="WordPress.org">
+                                    <label for="jf-wordpress">
+                                        <span>WordPress.org</span>
+                                    </label>
+                                </span>
+                                <span class="jf-checkbox">
+                                    <input type="checkbox" id="jf-tabtitle" name="bycondition" value="Tab Title 05">
+                                    <label for="jf-tabtitle">
+                                        <span>Tab Title 05</span>
+                                    </label>
+                                </span>
+                                <a href="javascript:void(0);" class="jf-viewmore">View More</a>
+                            </div>
+                        </div>
+                        <div class="jf-widget jf-recentposts">
+                            <div class="jf-widgettitle">
+                                <h3>Recent Posts</h3>
+                            </div>
+                            <div class="jf-recentpost">
+                                <div class="jf-recentpostdetails">
+                                    <figure class="jf-recentpostimg">
+                                        <img src="{% static 'assets-jobforest/images/thumbnail/img-03.jpg' %}" alt="image description">
+                                    </figure>
+                                    <div class="jf-recentpostcontent">
+                                        <h3>Don’t Fade Out In Crowed</h3>
+                                        <span><i class="lnr lnr-calendar-full"></i> Jun 27, 2019</span>
+                                    </div>
+                                </div>
+                                <div class="jf-recentpostdetails">
+                                    <figure class="jf-recentpostimg">
+                                        <img src="{% static 'assets-jobforest/images/thumbnail/img-04.jpg' %}" alt="image description">
+                                    </figure>
+                                    <div class="jf-recentpostcontent">
+                                        <h3>Don’t Fade Out In Crowed</h3>
+                                        <span><i class="lnr lnr-calendar-full"></i> Jun 27, 2019</span>
+                                    </div>
+                                </div>
+                                <div class="jf-recentpostdetails">
+                                    <figure class="jf-recentpostimg">
+                                        <img src="{% static 'assets-jobforest/images/thumbnail/img-05.jpg' %}" alt="image description">
+                                    </figure>
+                                    <div class="jf-recentpostcontent">
+                                        <h3>Don’t Fade Out In Crowed</h3>
+                                        <span><i class="lnr lnr-calendar-full"></i> Jun 27, 2019</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jf-widget jf-widgettags">
+                            <div class="jf-widgettitle">
+                                <h3>Tags</h3>
+                            </div>
+                            <div class="jf-tag">
+                                <a href="javascript:void(0);">Sales</a>
+                                <a href="javascript:void(0);">Tyre</a>
+                                <a href="javascript:void(0);">DIY</a>
+                                <a href="javascript:void(0);">Medical</a>
+                                <a href="javascript:void(0);">Transport</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--************************************
+    Blog Grid End
+    *************************************-->
+{% endblock content %}

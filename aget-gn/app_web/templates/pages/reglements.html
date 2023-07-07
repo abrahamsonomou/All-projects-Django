@@ -1,0 +1,51 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Reglements | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+       
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Reglements</h4>
+            </div>
+            <div class="card-body">
+              <div id="accordion">
+            
+                {% if list_reglements|length %}
+                {% for reglement in list_reglements %}
+                    <div class="accordion">
+                    <div class="accordion-header" role="button" data-toggle="collapse" data-target="#panel-body-{{reglement.pk}}"
+                        aria-expanded="true">
+                        <h4>{{reglement.titre_reglement}}</h4>
+                    </div>
+                    <div class="accordion-body collapse" id="panel-body-{{reglement.pk}}"  data-parent="#accordion">
+                        <p class="mb-0">{{reglement.description}}</p>
+                    </div>
+                    </div>
+                {% endfor %}
+                {% else %}
+                <div class="accordion">
+                    <div class="accordion-header bg-info" role="button" data-toggle="collapse" data-target="#panel-body-1"
+                        aria-expanded="true">
+                        <h4>Info !</h4>
+                    </div>
+                    <div class="accordion-body collapse show" id="panel-body-1" data-parent="#accordion">
+                        <p class="mb-0">Aucun reglement enregistré encore !</p>
+                    </div>
+                    </div>
+                {% endif %}
+             
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock content %}
+
+ 

@@ -1,0 +1,57 @@
+{% extends 'includes/_base_pages.html' %}
+{% block title %}SONOMOU.TECH - Tutoriels{% endblock title %}
+{% block bread1 %}Details Tutoriels{% endblock bread1 %}
+{% block bread2 %}Details Tutoriels{% endblock bread2 %}
+{% load embed_video_tags %}
+
+{% block content %}
+{% load static %}
+
+<section id="portfolio-details" class="portfolio-details">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-8">
+              <div class="swiper-slide">
+
+                {% if tutoriel.url %}
+                {% video tutoriel.url as my_video %}
+                {% comment %} URL: {{ my_video.url }} {% endcomment %}
+                {% comment %} Thumbnail: {{ my_video.thumbnail }} {% endcomment %}
+                {% comment %} Backend: {{ my_video.backend }} {% endcomment %}
+
+                {% video my_video "medium" %}
+                {% endvideo %}
+
+                {% else %}
+                <a href="{{tutoriel.url}}" target="_blank"><img src="{{tutoriel.image.url}}" alt="" class="img-fluid"></a>
+              
+              {% endif %}
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>Les informations du livre</h3>
+            <ul>
+              <li><strong>Category</strong>: {{tutoriel.categorie}}</li>
+              <li><strong>Auteur</strong>: {{tutoriel.auteur}}</li>
+              <li><strong>Date de publication</strong>: {{tutoriel.datePublication}}</li>
+              <li><strong>Lien youtube</strong>: <a href="{{tutoriel.url}}" target="_blank">{{tutoriel.titre|truncatechars:30}}</a></li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>{{tutoriel.titre}}</h2>
+            <p>
+                {{tutoriel.description}}
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+{% endblock content %}

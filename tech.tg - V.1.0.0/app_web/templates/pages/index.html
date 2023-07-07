@@ -1,0 +1,308 @@
+{% extends 'includes/_base_web.html' %}
+{% block title %}SONOMOU.TECH - Home{% endblock title %}
+{% block content %}
+{% load static %}
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero carousel  carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
+
+          <div class="col-lg-5 col-md-8">
+            <img src="{% static 'assets-web/img/hero-carousel/hero-carousel-1.svg' %} " alt="" class="img-fluid img">
+          </div>
+
+          <div class="col-lg-9 text-center">
+            <h2>Apprenez de nouvelles choses.</h2>
+            {% comment %} <p>Améliorez-vous et apprenez de nouvelles choses grâce à nos formations et de tutoriels vidéos gratuits.</p> {% endcomment %}
+            <a href="{% url 'formations'%}" class="btn-get-started scrollto ">Get Started</a>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- End Carousel Item -->
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
+
+          <div class="col-lg-5 col-md-8">
+            <img src="{% static 'assets-web/img/hero-carousel/hero-carousel-2.svg' %} " alt="" class="img-fluid img">
+          </div>
+
+          <div class="col-lg-9 text-center">
+            <h2>Apprendre grâce à plusieurs formats</h2>
+            {% comment %} <p>Vous cherchez une formation complète pour apprendre de A à Z ou une vidéo pour découvrir un nouvel outil ? Vous devriez trouver votre bonheur</p> {% endcomment %}
+            <a href="{% url 'formations'%}" class="btn-get-started scrollto ">Get Started</a>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- End Carousel Item -->
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
+
+          <div class="col-lg-5 col-md-8">
+            <img src="{% static 'assets-web/img/hero-carousel/hero-carousel-3.svg' %} " alt="" class="img-fluid img">
+          </div>
+
+          <div class="col-lg-9 text-center">
+            <h2>C'est le moment, c'est maintenant !</h2>
+            {% comment %} <p>Apprenez à coder avec des cours complets, gratuits et accessibles à tous</p> {% endcomment %}
+            <a href="{% url 'formations'%}" class="btn-get-started scrollto ">Get Started</a>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- End Carousel Item -->
+
+    {% for slider in list_sliders %}
+    {% if slider.status %}
+
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row justify-content-center gy-6">
+          
+          <div class="col-lg-5 col-md-8">
+            <img src="{{slider.photo.url}}" alt="" class="img-fluid img">
+          </div>
+
+          <div class="col-lg-9 text-center">
+            <h2>{{slider.titre}}</h2>
+            <p>{{slider.contenu}}</p>
+            <a href="{% url 'formations'%}" class="btn-get-started scrollto ">Get Started</a>
+          </div>
+
+        </div>
+      </div>
+    </div><!-- End Carousel Item -->
+    {% endif %}
+    
+    {% endfor %}
+
+    <a class="carousel-control-prev" href="#hero" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#hero" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+
+    <ol class="carousel-indicators"></ol>
+
+  </section><!-- End Hero Section -->
+
+
+
+  <main id="main">
+
+    <!-- ======= Call To Action Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-out">
+
+        <div class="row g-5">
+
+          <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
+            <h3>Bénéficiez de votre <em>formation</em>  professionnelle en Informatique</h3>
+            
+            <p>Domaine d’activité en plein essor, l’informatique est un secteur qui recrute. 
+              Les entreprises ont toutes besoin de professionnels des réseaux pour pouvoir fonctionner. </p>
+            <a class="cta-btn align-self-start" href="{% url 'formations'%}">Lire plus</a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
+            <div class="img">
+              <img src="{% static 'assets-web/img/cta.jpeg' %} " alt="" class="img-fluid">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Call To Action Section -->
+
+    <!-- ======= On Focus Section ======= -->
+    <section id="onfocus" class="onfocus">
+      <div class="container-fluid p-0" data-aos="fade-up">
+
+        <div class="row g-0">
+          <div class="col-lg-6 video-play position-relative">
+            <a href="https://www.youtube.com/watch?v=w_h5SSe5TLw" class="glightbox play-btn"></a>
+          </div>
+          <div class="col-lg-6">
+            <div class="content d-flex flex-column justify-content-center h-100">
+              <h3>Dans quels domaines de formation puis-je me lancer ?</h3>
+              <p class="fst-italic">
+                Il existe un certain nombre de formations qui ont chacune leurs spécificités. 
+                Il est donc nécessaire de choisir la sienne 
+                en fonction de son projet professionnel. 
+                Vous pouvez par exemple vous tourner vers des domaines comme :
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> la conception web</li>
+                <li><i class="bi bi-check-circle"></i> l’administration de systèmes informatiques</li>
+                <li><i class="bi bi-check-circle"></i> la gestion de réseaux informatiques </li>
+                <li><i class="bi bi-check-circle"></i> la sécurité informatique</li>
+                <li><i class="bi bi-check-circle"></i> le développement informatique d’applications ou de logiciels</li>
+              </ul>
+              <a href="{% url 'formation'%}" class="read-more align-self-start"><span>Lire plus</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End On Focus Section -->
+
+    {% if nb_service %}
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Nos Services</h2>
+          {% comment %} <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p> {% endcomment %}
+        </div>
+
+        <div class="row gy-5">
+
+          {% for service in list_services %}
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="{{service.image.url}}" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-activity"></i>
+                </div>
+                <a href="#" class="stretched-link">
+                  <h3>{{service.titre}}</h3>
+                </a>
+                <p>{{service.description|truncatechars:150}}</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+    {% endif %}
+
+    {% if nb_temoignage %}
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+
+        <div class="testimonials-slider swiper">
+          <div class="swiper-wrapper">
+            {% for temoingnage in list_temoingnages %}
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{{temoingnage.photo.url}}" class="testimonial-img" alt="">
+                <h3>{{temoingnage.fullname}}</h3>
+                <h4>{{temoingnage.specialite}}</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  {{temoingnage.contenu}}
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+            {% endfor %}
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+    {% endif %}
+          
+    {% if nb_team %}
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Notre Equipe</h2>
+          {% comment %} <p>Architecto nobis eos vel nam quidem vitae temporibus voluptates qui hic deserunt iusto omnis nam voluptas asperiores sequi tenetur dolores incidunt enim voluptatem magnam cumque fuga.</p> {% endcomment %}
+        </div>
+
+        <div class="row gy-5">
+
+          {% for team in list_teams %}
+          <div class="col-xl-4 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{{team.photo.url}}" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+                <div class="social">
+                  <a href="{{team.twitter}}"><i class="bi bi-twitter"></i></a>
+                  <a href="{{team.facebook}}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{team.instagram}}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{team.linkdin}}"><i class="bi bi-linkedin"></i></a>
+                </div>
+                <h4>{{team.nom}}</h4>
+                <span>{{team.specialite}}</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+    {% endif %}
+
+    {% if nb_articles %}
+    <!-- ======= Recent Blog Posts Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Blog</h2>
+          <p>Les recents articles du Blog</p>
+        </div>
+
+        <div class="row">
+
+          {% for article in list_articles %}
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="post-box">
+              <div class="post-img"><img src="{{article.image.url}}" class="img-fluid" alt=""></div>
+              <div class="meta">
+                <span class="post-date">{{article.created}}</span>
+                <span class="post-author"> / {{article.auteur}}</span>
+              </div>
+              <h4 class="post-title">{{article.titre|truncatechars:30}}</h4>
+              <p>{{article.description1|truncatechars:150}}</p>
+              <a href="{% url 'detail_article' article.slug %}" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+    </section><!-- End Recent Blog Posts Section -->
+    {% endif %}
+
+  </main><!-- End #main -->
+
+  {% endblock content %}

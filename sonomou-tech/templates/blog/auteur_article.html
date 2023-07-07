@@ -1,0 +1,136 @@
+{% extends 'includes/_BaseMain.html' %}
+{% load static %}
+{% block content %}
+    {% comment %} <!--breadcrumbs area start--> {% endcomment %}
+    <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="{% url 'index' %}">home</a></li>
+                            <li>All blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    {% comment %} <!--breadcrumbs area end-->
+	<!--blog body area start--> {% endcomment %}
+    <div class="blog_details mt-60">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-9">
+                    <div class="blog_wrapper">
+                        <div class="section-title">
+                            {% if liste_article %}
+                            <h2>Resultat de la recherche</h2>
+                            {% endif %}
+
+                        </div>
+                        <div class="row">
+                            
+                    
+                    {% if liste_article %}
+                                
+                                
+                    {% for article in liste_article %}
+                        
+                            <div class="col-lg-6 col-md-6">
+                                <article class="single_blog mb-60">
+                                    <figure>
+                                        <div class="blog_thumb">
+                                            
+                                            {% if article.image  %}
+                                            <a href="{% url 'detail_article' article.pk %}"><img src="{{article.image.url}}" alt="{{article.titre|truncatechars:30}}"></a>
+                                            {% endif %}
+                                                
+
+                                        </div>
+                                        <figcaption class="blog_content">
+                                            <h3><a href="{% url 'detail_article' article.pk %}">{{article.titre|truncatechars:30}}</a></h3>
+                                            <div class="blog_meta">                                        
+                                                <span class="author">Publié par : <a href="#">{{article.auteur}}</a> / </span>
+                                                <span class="post_date"> il y a : <a href="{% url 'detail_article' article.pk %}">{{article.updated|timesince|truncatechars:30}}</a></span>
+                                            </div>
+                                            <div class="blog_desc">
+                                                <p>{{article.resume|truncatechars:100}}</p>
+                                            </div>
+                                            <footer class="readmore_button">
+                                                <a href="{% url 'detail_article' article.pk %}">lire plus</a>
+                                            </footer>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                            </div>
+                    {% endfor %}
+                         {% else %}
+                         <div class="col-lg-12 col-md-12">
+                            <article class="single_blog mb-60">
+                               <h1 class="text-center">Aucun resultat trouvé !</h1>
+                            </article>
+                        </div>
+                         {% endif %}
+                        </div>
+                    </div>
+                </div> 
+                
+                <div class="col-lg-3 col-md-12">
+                    <div class="blog_sidebar_widget">
+                        {% comment %} inclusion de la recherche {% endcomment %}
+                        {% include 'includes/_rechercheArticle.html' %}
+
+                       
+
+                        {% if recent_articles|length %}
+                        <div class="widget_list widget_post">
+                            <h3>Recent Posts</h3>
+
+                                {% for article in recent_articles %}
+                                <div class="post_wrapper">
+                                    <div class="post_thumb">
+                                        
+                                        {% if article.image %}
+                                        <a href="blog-details.html"><img src="{{article.image.url}}" alt=""></a>
+                                        {% endif %}
+                                            
+                                    </div>
+                                    <div class="post_info">
+                                        <h3><a href="blog-details.html">{{article.titre|truncatechars:30}}</a></h3>
+                                        <span>Publié il y a {{article.updated|timesince|truncatechars:15}}</span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+    
+                           
+                           
+                        </div>
+                        {% endif %}
+                        <div class="widget_list widget_tag">
+                            <h3>Tag products</h3>
+                            <div class="tag_widget">
+                                <ul>
+                                    <li><a href="#">Drone</a></li>
+                                    <li><a href="#">Sky</a></li>
+                                    <li><a href="#">Fly</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <!--blog section area end--> {% endcomment %}
+	
+    {% comment %} inclusion de la pagination {% endcomment %}
+	 {% if liste_article|length %}
+          <!-- Pagination -->
+          {% include "includes/_pagination.html" with page=liste_article %}
+
+     {% endif %}
+
+{% endblock content %}
+    

@@ -1,0 +1,40 @@
+{% extends 'includes/_base_client.html' %}
+{% load static %}
+{% block title %}portfolio{% endblock title %}
+{% block titre %}Portfolio{% endblock titre %}
+{% block titre1 %}Portfolio{% endblock titre1 %}
+{% block back %}url('{% static 'assets-client/img/portfolio-header.jpg' %}'){% endblock back %}
+{% block content %}
+      <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+
+          <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+            <li ><a href="{% url 'portfolio' %}" class="text-secondary">All</a></li>
+            {% for categorie in categories %}
+            <li><a href="" class="text-secondary">{{categorie.nom_categorie}}</a></li>
+            {% endfor %}
+          </ul><!-- End Portfolio Filters -->
+
+          <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="300">
+
+            {% for portfolio in portfolio_en_relation %}
+            <div class="col-lg-4 col-md-6 portfolio-item filter-books">
+              <img src="{{portfolio.image.url}}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{portfolio.titre}}</h4>
+                <p>{{portfolio.description}}</p>
+                <a href="{{portfolio.image.url}}" title="{{portfolio.titre}}" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="{% url 'detail_portfolio' portfolio.slug %}" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div><!-- End Portfolio Item -->
+            {% endfor %}
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+{% endblock content %}

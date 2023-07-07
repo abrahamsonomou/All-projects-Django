@@ -1,0 +1,80 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Le reglement interieur| AGET{% endblock title %}
+{% block content %}
+<section class="section">
+  <div class="section-body">
+      <div class="row">
+          
+          <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                <h4>Ajout du reglement</h4>
+              </div>
+              <div class="card-body">
+                <div class="card-body pb-0">
+                  <form class="" action="" method="POST" > 
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label>Titre</label>
+                      {{form.titre_reglement}}
+                    </div>
+                    <div class="form-group">
+                      <label>Description</label>
+                      {{form.description}}
+                    </div>
+                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Ajouter</button>
+                    <input type="reset" class="btn btn-danger m-t-15" value="Effacer">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Le reglement interieur de l'AGET</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-striped" id="table-1">
+                      <thead>
+                        <tr>
+                          
+                          <th>Titre</th>
+                          <th>Description</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% for reglement in list_reglements %}
+
+                        <tr>
+                          <td>{{reglement.titre_reglement}}</td>
+                          <td>{{reglement.description}}</td>
+                          <td>
+                            {% if has_perm_change %}
+                            <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                                class="fas fa-pencil-alt"></i></a>
+                                {% endif %}
+                                {% if has_perm_delete %}
+                            <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                              data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                              data-confirm-yes="alert('Deleted')" href="{% url 'reglement_delete' reglement.pk %}"><i class="fas fa-trash"></i></a>
+                              {% endif %}
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+  </div>
+</section>
+{% endblock content %}

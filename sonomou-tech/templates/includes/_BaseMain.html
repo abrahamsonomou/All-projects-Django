@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% comment %} <!-- Favicon --> {% endcomment %}
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets-main1/img/favicon.ico' %}">
+    
+    {% comment %} <!-- Plugins CSS -->  {% endcomment %}
+    <link rel="stylesheet" href="{% static 'assets-main1/css/plugins.css' %}">
+    
+    {% comment %} <!-- Main Style CSS --> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'assets-main1/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets-main1/css/custom.css' %}">
+
+</head>
+
+<body>
+
+  {% include 'includes/_Offcanvas_menu.html' %}
+
+  {% comment %} header area end {% endcomment %}
+  {% include 'includes/_header.html' %}
+
+
+  
+  {% block content %}
+    
+  {% endblock content %}
+
+
+
+  {% include 'includes/_footer.html' %}
+
+
+
+  {% comment %} <!-- Plugins JS --> {% endcomment %}
+  <script src="{% static 'assets-main1/js/plugins.js' %}"></script>
+  
+  {% comment %} <!-- Main JS --> {% endcomment %}
+  <script src="{% static 'assets-main1/js/main.js' %}"></script>
+  
+  
+  
+  </body>
+  
+  </html>

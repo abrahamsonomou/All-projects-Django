@@ -1,0 +1,95 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Liste des articles | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Les articles</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+
+                <div class="card-body">
+                  {% comment %} <div class="float-left">
+                    <select class="form-control selectric">
+                      {% for categorie in categories %}
+                      <option><a href="{% url 'blog' %}">{{categorie.nom_categorie}}</a></option>
+                      {% endfor %}
+                    </select>
+                  </div> {% endcomment %}
+                  {% include 'includes/recherche_articles.html' %}
+
+                  <div class="clearfix mb-3"></div>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <tr>
+                        <th>Auteur</th>
+                        <th>Titre</th>
+                        <th>Categorie</th>
+                        <th>Creation</th>
+                        <th>Views</th>
+                        <th>Status</th>
+                      </tr>
+
+                      {% for article in articles %}
+                      <tr>
+                        <td>
+                          <a href="#">
+                            {% if article.image %}
+                            <img alt="image" src="{{article.user.photo.url}}" class="rounded-circle" width="35"
+                            data-toggle="title" title="">
+                          <span class="d-inline-block ml-1">{{article.user.last_name}} {{article.user.first_name}}</span>
+                          {% else %}
+                          <img alt="image" src="{% static 'assets/img/users/default-avatar.png' %}" class="rounded-circle" width="35"
+                          data-toggle="title" title="">
+                        <span class="d-inline-block ml-1">{{article.user.last_name}} {{article.user.first_name}}</span>
+                         {% endif %} 
+
+
+                          </a>
+                        </td>
+                        <td>{{article.titre|truncatechars:50}}
+                          <div class="table-links">
+                            <a href="{% url 'detail_article' article.slug %}">View</a>
+                            {% if has_perm_change %}
+                            <div class="bullet"></div>
+                            <a href="#">Edit</a>
+                            {% endif %}
+                            {% if has_perm_delete %}
+                            <div class="bullet"></div>
+                            <a href="#" class="text-danger">Trash</a>
+                          </div>
+                          {% endif %}
+                        </td>
+                        <td>
+                          <a href="#">{{article.categorie}}</a>
+                        </td>
+                        <td>{{article.updated}}</td>
+                        <td>3,587</td>
+                        <td>
+                          <div class="badge badge-warning">{{article.statut}}</div>
+                        </td>
+                      </tr>
+
+                      {% endfor %}
+                    
+                    </table>
+                  </div>
+
+              {% if articles|length %}
+              <!-- Pagination -->
+               {% include "includes/_pagination.html" with page=articles %}
+             {% endif %} 
+                </div>
+
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

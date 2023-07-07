@@ -1,0 +1,86 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Les membres de l'aget | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Les membres de l'AGET</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped" id="table-1">
+                  <thead>
+                    <tr>
+                      
+                      <th>Nom</th>
+                      <th>Telephone</th>
+                      <th>Photo</th>
+                      <th>Adresse</th>
+                      <th>Formation</th>
+                      <th>Specialité</th>
+                      <th class="text-center"> Année</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for membre in list_membres %}
+                    {% if membre.is_membre %}
+                    <tr>
+                      <td>
+                        {% if membre.last_name %}
+                        {{membre.last_name}} {{membre.first_name}}
+                        {% endif %}
+                      </td>
+                      <td>
+                        {% if membre.telephon %}
+                        {{membre.telephone}}
+                        {% endif %}
+                        </td>
+                      <td>
+                        {% if membre.photo %}
+                        <img alt="image" src="{{membre.photo.url}}" width="35">
+                      {% else %}
+                        <img alt="image" src="{% static 'assets-aget/img/users/default-avatar.png' %}" width="35">
+                     {% endif %}
+
+                      </td>
+                      <td>
+                        
+                        {% if membre.adresse %}
+                        {{membre.adresse}}
+                        {% endif %}
+                      </td>
+                      <td>
+                        {% if membre.formation %}
+                        {{membre.formation}}
+                        {% endif %}
+                        </td>
+                      <td>
+                        
+                        {% if membre.specialite %}
+                        {{membre.specialite}}
+                        {% endif %}
+                        </td>
+                      <td>
+                        {% if membre.annee %}
+                        {{membre.annee}}
+                        {% endif %}
+                      </td>
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+
+ 

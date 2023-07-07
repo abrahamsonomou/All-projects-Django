@@ -1,0 +1,88 @@
+{% extends 'includes/_base_admin.html' %}
+{% load static %}
+{% block title %}ajout d'articles{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Ecrire un article</h4>
+            </div>
+            <div class="card-body">
+              <form class="form-signin" action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Title</label>
+                  <div class="col-sm-12 col-md-7">
+                {{form.titre}}
+                    {% comment %} <input type="text" class="form-control"> {% endcomment %}
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
+                  <div class="col-sm-12 col-md-7">
+                    {% comment %} <select class="form-control selectric">
+                      <option>Tech</option>
+                      <option>News</option>
+                      <option>Political</option>
+                    </select> {% endcomment %}
+                  {{form.categorie}}
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
+                  <div class="col-sm-12 col-md-7">
+                  {{form.description1}}
+                      {% comment %} <textarea name="" id="" cols="30" rows="15" class="form-control"></textarea> {% endcomment %}
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Contenu</label>
+                  <div class="col-sm-12 col-md-7">
+                  {% comment %} {{form.description2}} {% endcomment %}
+                    {% comment %} <textarea class="summernote"></textarea> {% endcomment %}
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image</label>
+                  <div class="col-sm-12 col-md-7">
+                    <div id="image-preview" class="image-preview">
+                      <label for="image-upload" id="image-label">Choose File</label>
+                      {{form.image}}
+                      {% comment %} <input type="file" name="image" id="image-upload" /> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+                {% comment %} <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tags</label>
+                  <div class="col-sm-12 col-md-7">
+                    <input type="text" class="form-control inputtags">
+                  </div>
+                </div> {% endcomment %}
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
+                  <div class="col-sm-12 col-md-7">
+                  {{form.published}}
+                    {% comment %} <select class="form-control selectric">
+                      <option>Publish</option>
+                      <option>Draft</option>
+                      <option>Pending</option>
+                    </select> {% endcomment %}
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                  <div class="col-sm-12 col-md-7">
+                    <button class="btn btn-primary">Create Post</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,10 @@
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      {% for info in infos %}
+      <h1>{{info.nom}}</h1>
+      <p>Je suis <span class="typed" data-typed-items="{{info.specialite}}"></span></p>
+      {% endfor %}
+    </div>
+  </section><!-- End Hero -->

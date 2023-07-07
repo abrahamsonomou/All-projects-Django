@@ -1,0 +1,100 @@
+{% extends 'includes/_base_pages.html' %}
+
+{% block title %}SONOMOU.TECH - Tutoriels{% endblock title %}
+{% block bread1 %}Tutoriels{% endblock bread1 %}
+{% block bread2 %}Tutoriels{% endblock bread2 %}
+
+{% block content %}
+{% load static %}
+{% load embed_video_tags %}
+
+   <!-- ======= Blog Section ======= -->
+   <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row g-5">
+
+        <div class="col-lg-8">
+
+          <div class="row gy-4 posts-list">
+
+
+{% for tutoriel in list_tutoriels %}
+            <div class="col-lg-6">
+              <article class="d-flex flex-column">
+
+                <div class="post-img">
+                  {% if tutoriel.url %}
+                    {% video tutoriel.url as my_video %}
+                    {% comment %} URL: {{ my_video.url }} {% endcomment %}
+                    {% comment %} Thumbnail: {{ my_video.thumbnail }} {% endcomment %}
+                    {% comment %} Backend: {{ my_video.backend }} {% endcomment %}
+
+                    {% video my_video "small" %}
+                    {% endvideo %}
+
+                    {% else %}
+                  <img src="{{tutoriel.image.url}}" alt="" class="img-fluid">
+                  {% endif %}
+                </div>
+
+                <h2 class="title">
+                  <a href="{% url 'detail_tutoriel' tutoriel.slug %}">{{tutoriel.titre|truncatechars:30}}</a>
+                </h2>
+
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'detail_tutoriel' tutoriel.slug %}">Publié il y a {{tutoriel.plublish|timesince|truncatechars:15}}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'detail_tutoriel' tutoriel.slug %}">{{tutoriel.auteur}}</a></li>
+                  </ul>
+                </div>
+
+                <div class="content">
+                  <p>
+                      {{tutoriel.description|truncatechars:100}}
+                  </p>
+                </div>
+
+                <div class="read-more mt-auto align-self-end">
+                  <a href="{% url 'detail_tutoriel' tutoriel.slug %}">Read More ...</a>
+                </div>
+                
+              </article>
+            </div><!-- End post list item -->
+
+            {% endfor %}
+          </div><!-- End blog posts list -->
+       
+          {% if list_tutoriels|length %}
+          <!-- Pagination -->
+          {% include "includes/_pagination.html" with page=list_tutoriels %}
+   
+        </div>
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+
+            {% comment %} recherche {% endcomment %}
+            {% include 'includes/recherche_tutoriel.html' %}
+
+            {% comment %} categorie {% endcomment %}
+            {% include 'includes/cat_tutoriel.html' %}
+
+            {% comment %} recents Books {% endcomment %}
+            {% include 'includes/recent_tutoriel.html' %}
+
+            {% comment %} tag {% endcomment %}
+            {% include 'includes/tag_tutoriel.html' %}
+
+          </div><!-- End Blog Sidebar -->
+
+        </div>
+        {% endif %}
+      </div>
+
+    </div>
+  </section><!-- End Blog Section -->
+
+  
+{% endblock content %}

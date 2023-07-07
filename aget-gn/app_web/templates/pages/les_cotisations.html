@@ -1,0 +1,145 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Listes des cotisations | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+  <div class="section-body">
+      <div class="row">
+          
+          {% comment %} <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+            <div class="card">
+              <div class="card-header">
+                <h4>Referral Link</h4>
+              </div>
+              <div class="card-body">
+                <div class="card-body pb-0">
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please fill in the title
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please fill in the title
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="title" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please fill in the title
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> {% endcomment %}
+
+          <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Les cotisations des membres de l'AGET</h4>
+                </div>
+                <div class="card-body">
+                  <div class="row float-right mr-5 mb-2">
+                    <button type="button" class=" btn btn-primary" data-toggle="modal" data-target="#exampleModal">Ajouter</button>
+                  </div>
+                  
+
+
+                  <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
+                      <thead>
+                        <tr>
+                          <th>Nom</th>
+                          <th>Telephone</th>
+                          <th>Motif</th>
+                          <th>Mode de payement</th>
+                          <th>Montant</th>
+                          <th>Date</th>
+                        </tr>
+                      </thead>
+                        </thead>
+                        
+                        {% for cotisation in les_cotisations %}
+                        <tr>
+                            <td>
+                              {% if cotisation.membre.photo %}
+                              <img alt="image" src="{{cotisation.membre.photo.url}}" class="rounded-circle" width="45" data-toggle="title" title="">
+                              {% else %}
+                              <img alt="image" src="{% static 'assets/img/users/default-avatar.png' %}" class="rounded-circle" width="45" data-toggle="title" title="">
+                              {% endif %} 
+                              
+                              {{cotisation.membre.last_name}} {{cotisation.membre.first_name}}
+                              <div class="table-links">
+                                <a href="#">View</a>
+                                {% if has_perm_change %}
+                                <div class="bullet"></div>
+                                <a href="#">Edit</a>
+                                {% endif %}
+                                {% if has_perm_delete %}
+                                <div class="bullet"></div>
+                                <a href="{% url 'delete_cotisation' cotisation.pk %}" class="text-danger">Trash</a>
+                              </div>
+                              {% endif %}
+                            </td>
+                            <td>{{cotisation.membre.telephone}}</td>
+                            <td>{{cotisation.motif}}</td>
+                            <td>{{cotisation.mode_payement}}</td>
+                            <td>{{cotisation.montant}}</td>
+                            <td>{{cotisation.updated}}</td>
+                          </tr>
+                    {% endfor %}
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+  </div>
+</section>
+        <!-- Modal with form -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="formModal">Ajout de cotisations</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+
+                <form class="" action="" method="POST" > 
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label>Membre</label>
+                    {{form.membre}}
+                  </div>
+                  <div class="form-group">
+                    <label>Motif</label>
+                    {{form.motif}}
+                  </div>
+                  <div class="form-group">
+                    <label>Montant</label>
+                    {{form.montant}}
+                  </div>
+                  <div class="form-group">
+                    <label>Mode de payement</label>
+                    {{form.mode_payement}}
+                  </div>
+                  <button type="submit" class="btn btn-primary m-t-15 waves-effect">Ajouter</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock content %}

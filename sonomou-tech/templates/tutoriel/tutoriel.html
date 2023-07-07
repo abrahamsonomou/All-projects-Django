@@ -1,0 +1,151 @@
+{% extends 'includes/_BaseMain.html' %}
+{% load static %}
+{% block title %}tutoriels | SONOMOU.TECH{% endblock title %}
+{% load embed_video_tags %}
+
+{% block content %}
+    {% comment %} <!--breadcrumbs area start--> {% endcomment %}
+    <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="{% url 'index' %}">home</a></li>
+                            <li>All Tutoriels</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    {% comment %} <!--breadcrumbs area end-->
+	<!--blog body area start--> {% endcomment %}
+    <div class="blog_details mt-60">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-9">
+                    <div class="blog_wrapper">
+                        <div class="section-title">
+                            
+                            {% if tutoriels|length %}
+                            <h2>All Tutoriels</h2>
+                            {% endif %}
+                                
+                        </div>
+                        <div class="row">
+                    
+                    {% if tutoriels %}
+            {% for tutoriel in tutoriels %}
+                        
+                            <div class="col-lg-6 col-md-6">
+                                <article class="single_blog mb-60">
+                                    <figure>
+                                        <div class="blog_thumb">
+                                            {% if tutoriel.url %}
+                                            {% video tutoriel.url as my_video %}
+                                            {% comment %} URL: {{ my_video.url }} {% endcomment %}
+                                            {% comment %} Thumbnail: {{ my_video.thumbnail }} {% endcomment %}
+                                            {% comment %} Backend: {{ my_video.backend }} {% endcomment %}
+                                            {% video my_video "small" %}
+                                            {% endvideo %}
+                                            {% else %}
+                                             {% if tutoriel.image  %}
+                                            <a href="{% url 'detail_tutoriel' tutoriel.pk %}"><img src="{{tutoriel.image.url}}" alt="{{tutoriel.titre|truncatechars:30}}"></a>
+                                            {% endif %}
+                                            {% endif %}
+
+                                           
+                                                
+
+                                        </div>
+                                        <figcaption class="blog_content">
+                                            <h3><a href="{% url 'detail_tutoriel' tutoriel.pk %}">{{tutoriel.titre|truncatechars:30}}</a></h3>
+                                            <div class="blog_meta">                                        
+                                                <span class="author">Categorie: <a href="{% url 'detail_tutoriel' tutoriel.pk %}">{{tutoriel.categorie}}</a> / </span>
+                                                <span class="author">Publié par : <a href="{% url 'detail_tutoriel' tutoriel.pk %}">{{tutoriel.auteur}}</a> / </span>
+                                                <span class="post_date"> il y a : <a href="{% url 'detail_tutoriel' tutoriel.pk %}">{{tutoriel.updated|timesince|truncatechars:30}}</a></span>
+                                            </div>
+                                            <div class="blog_desc">
+                                                <p>{{tutoriel.resume|truncatechars:100}}</p>
+                                            </div>
+                                            <footer class="readmore_button">
+                                                <a href="{% url 'detail_tutoriel' tutoriel.pk %}">lire plus</a>
+                                            </footer>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                            </div>
+            {% endfor %}
+            {% else %}
+            <div class="col-lg-12 col-md-12">
+               <article class="single_blog mb-60">
+                  <h1 class="text-center">Aucun tutoriel publié !</h1>
+               </article>
+           </div>
+            {% endif %}    
+                        </div>
+                    </div>
+                </div> 
+
+                {% if tutoriels|length %}
+                
+                <div class="col-lg-3 col-md-12">
+                    <div class="blog_sidebar_widget">
+                        {% comment %} inclusion de la recherche {% endcomment %}
+                        {% include 'includes/_rechercheTutoriel.html' %}
+
+                       
+
+                        {% if recent_tutoriels|length %}
+                        <div class="widget_list widget_post">
+                            <h3>Recent Tutoriels</h3>
+
+                                {% for tutoriel in recent_tutoriels %}
+                                <div class="post_wrapper">
+                                    <div class="post_thumb">
+                                        
+                                        {% if tutoriel.image %}
+                                        <a href="{% url 'detail_tutoriel' tutoriel.pk %}"><img src="{{tutoriel.image.url}}" alt=""></a>
+                                        {% endif %}
+                                            
+                                    </div>
+                                    <div class="post_info">
+                                        <h3><a href="{% url 'detail_tutoriel' tutoriel.pk %}">{{tutoriel.titre|truncatechars:30}}</a></h3>
+                                        <span>Publié il y a {{tutoriel.updated|timesince|truncatechars:15}}</span>
+                                    </div>
+                                </div>
+                                {% endfor %}
+    
+                                {% endif %}
+                           
+                        </div>
+                        <div class="widget_list widget_tag">
+                            <h3>Tag </h3>
+                            <div class="tag_widget">
+                                <ul>
+                                    <li><a href="#">Drone</a></li>
+                                    <li><a href="#">Sky</a></li>
+                                    <li><a href="#">Fly</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% comment %} <!--blog section area end--> {% endcomment %}
+	
+    {% comment %} inclusion de la pagination {% endcomment %}
+	 {% if tutoriels|length %}
+          <!-- Pagination -->
+          {% include "includes/_pagination.html" with page=tutoriels %}
+
+     {% endif %}
+
+{% endblock content %}
+    

@@ -1,0 +1,58 @@
+    {% load static %}
+    {% comment %} <!--header area start-->
+    <!--Offcanvas menu area start--> {% endcomment %}
+    <div class="off_canvars_overlay">
+            
+    </div>
+
+    <div class="Offcanvas_menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="canvas_open">
+                        <a href="javascript:void(0)"><i class="ion-navicon"></i></a>
+                    </div>
+                    <div class="Offcanvas_menu_wrapper">
+                        <div class="canvas_close">
+                              <a href="javascript:void(0)"><i class="ion-android-close"></i></a>  
+                        </div>
+                        <!-- <div class="support_info">
+                            <p>Any Enquiry: <a href="tel:">+56985475235</a></p>
+                        </div>
+                        <div class="top_right text-right">
+                            <ul>
+                               <li><a href="my-account.html"> My Account </a></li> 
+                               <li><a href="checkout.html"> Checkout </a></li> 
+                            </ul>
+                        </div>  -->
+                        <div class="search_container">
+                           <form action="#">
+                                <div class="search_box">
+                                    <input placeholder="Search..." type="text">
+                                    <button type="submit">Search</button> 
+                                </div>
+                            </form>
+                        </div> 
+                        
+                     
+                        {% comment %} inclusion du menu du site {% endcomment %}
+                        {% include 'includes/_menu.html' %}
+                       
+
+                        <div class="Offcanvas_footer">
+                            <span><a href="#"><i class="fa fa-envelope-o"></i> contact@sonomou.tech</a></span>
+                            <ul>
+                                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Offcanvas menu area end-->
+    

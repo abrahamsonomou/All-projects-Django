@@ -1,0 +1,162 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}{{article.titre}} | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+  <div class="section-body">
+    <div class="row mt-sm-4">
+
+      <div class="col-12 col-md-12 col-lg-4">
+        <article class="article article-style-c">
+          <div class="article-header">
+            {% if article.image %}
+            <div class="article-image" data-background="{{article.image.url}}"></div>
+            {% else %}
+            <div class="article-image" data-background="{% static 'assets/img/users/default-blog.png' %}"></div>
+          </div>
+          {% endif %} 
+          <div class="article-details">
+            <div class="article-category"><a href="#">Publié il y a {{article.updated|timesince|truncatechars:15}}</a>
+              {% comment %} <div class=""></div> <a href="#"></a> {% endcomment %}
+            </div>
+            <div class="article-title">
+              <h2><a href="#">{{article.titre}}</a></h2>
+            </div>
+            {% if article.description %}
+            <p>{{article.description|truncatechars:100}}</p>
+          {% endif %}
+            <div class="article-user">
+              
+              {% if article.user.photo %}
+              <img alt="image" src="{{article.user.photo.url}}">
+              {% else %}
+              <img alt="image" src="{% static 'assets/img/users/default-avatar.png' %}">
+              {% endif %}
+              
+              <div class="article-user-details">
+                <div class="user-detail-name">
+                  {% if article.user.last_name %}
+                  <a href="#">{{article.user.last_name}} {{article.user.first_name}}</a>
+                  {% else %}
+                  <a href="#">{{article.user.username}}</a>
+                  {% endif %}
+                </div>
+                <div class="text-job">{{article.specialite}}</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+
+        {% comment %} <div class="card">
+          <div class="card-header">
+            <h4>Commentaires</h4>
+          </div>
+          <div class="card-body">
+            <div class="card-body">
+              <ul class="list-unstyled list-unstyled-border list-unstyled-noborder">
+
+                <li class="media">
+                  {% if article.user.photo %}
+                  <img alt="image" class="mr-3 rounded-circle" width="70" src="{{article.user.photo.url}}" src="{{article.user.photo.url}}">
+                  {% else %}
+                  <img alt="image" class="mr-3 rounded-circle" width="70" src="{% static 'assets/img/users/default-avatar.png' %}" src="{% static 'assets/img/users/default-avatar.png' %}">
+                  {% endif %}
+                  <div class="media-body">
+                    <div class="media-right">
+                      <div class="text-primary">Approved</div>
+                    </div>
+                    <div class="media-title mb-1">Cara Stevens</div>
+                    <div class="text-time">Yesterday</div>
+                    <div class="media-description text-muted">Duis aute irure dolor in reprehenderit in voluptate
+                      velit esse
+                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                    <div class="media-links">
+                      <a href="#">View</a>
+                      <div class="bullet"></div>
+                      <a href="#">Edit</a>
+                      <div class="bullet"></div>
+                      <a href="#" class="text-danger">Trash</a>
+                    </div> 
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h4>Skills</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled user-progress list-unstyled-border list-unstyled-noborder">
+              <li class="media">
+                <div class="media-body">
+                  <div class="media-title">Java</div>
+                </div>
+                <div class="media-progressbar p-t-10">
+                  <div class="progress" data-height="6">
+                    <div class="progress-bar bg-primary" data-width="70%"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-body">
+                  <div class="media-title">Web Design</div>
+                </div>
+                <div class="media-progressbar p-t-10">
+                  <div class="progress" data-height="6">
+                    <div class="progress-bar bg-warning" data-width="80%"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="media">
+                <div class="media-body">
+                  <div class="media-title">Photoshop</div>
+                </div>
+                <div class="media-progressbar p-t-10">
+                  <div class="progress" data-height="6">
+                    <div class="progress-bar bg-green" data-width="48%"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div> {% endcomment %}
+      </div>
+      {% if article.description %}
+
+      <div class="col-12 col-md-12 col-lg-8">
+        <div class="card">
+          <div class="padding-20">
+             <ul class="nav nav-tabs" id="myTab2" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#about" role="tab"
+                  aria-selected="true">Description</a>
+              </li>
+            </ul> 
+
+            <div class="tab-content tab-bordered" id="myTab3Content">
+              
+              {% if article.description %}
+                <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="home-tab2">
+                  <p class="m-t-30">{{article.description}}</p>
+                </div>
+                {% else %}
+                <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="home-tab2">
+                  <p class="m-t-30">La description de cet article n'a pas été definie</p>
+                </div>
+              {% endif %}
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</section>
+{% endblock content %}

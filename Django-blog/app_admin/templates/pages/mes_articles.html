@@ -1,0 +1,65 @@
+{% extends 'includes/_base_admin.html' %}
+{% load static %}
+{% block title %}mes articles{% endblock title %}
+{% block content %}
+{% if articles %}
+
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Mes articles</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-striped" id="table-1">
+                  <thead>
+                    <tr>
+                      <th>Titre</th>
+                      <th>Categorie</th>
+                      <th>Image</th>
+                      <th>Status</th>
+                      <th>Creation</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for article in articles %}
+                    <tr>
+                      <td>{{article.titre|truncatechars:50}}</td>
+                      <td>{{article.categorie}}</td>
+                      <td>
+                        <img alt="image" src="{{article.image.url}}" width="55">
+                      </td>
+                      <td>
+                        <div class="badge badge-success badge-shadow">Completed</div>
+                      </td>
+                      <td>{{article.updated}}</td>
+                      <td>
+                        <a href="{% url 'update_article' article.slug %}" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                            class="fas fa-pencil-alt"></i></a>
+                            {% comment %} defiition des permitions {% endcomment %}
+                            {% if has_perm %}
+                          <a href="{% url 'delete_article' article.slug %}" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                          data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                          data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                          {% endif %}
+                        <a href="{% url 'details_article' article.slug %}" class="btn btn-primary">Details</a>
+                        </td>
+                    </tr>
+            {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+{% endblock content %}

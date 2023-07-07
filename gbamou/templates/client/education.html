@@ -1,0 +1,109 @@
+{% load static %}
+        <!-- ==================== education-section start ==================== -->
+        <div data-scroll='3' class="education-section sec-p100-bg-bs mb-30 clearfix" id="education">
+
+            <div class="Section-title">
+                <h2>
+					<i class="fa fa-graduation-cap" aria-hidden="true"></i>
+					Education
+				</h2>
+                <span>Education</span>
+                {% for info in infos %}
+                {% if info.education %}
+                {{info.education.html|safe}}
+                {% endif %}
+
+                {% endfor %}
+
+            </div>
+            <!-- /.Section-title -->
+
+            <ul class="accordion collapsible" data-collapsible="accordion">
+                {% for education in educations %}
+                <li>
+                    <div class="accordion-header acco-clr1 collapsible-header active">
+                        <span class="icon">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</span>
+                        <p>
+                            <strong>{{education.formation}}</strong>
+                        </p>
+                        <p>
+                            <strong>{{education.ecole}} - {{education.periode}} </strong>
+                        </p>
+                    </div>
+                    <div class="accordion-body collapsible-body">
+                        <span>
+                            {{education.description}}
+						</span>
+                    </div>
+                </li>
+                {% endfor %}
+                {% comment %} <li>
+                    <div class="accordion-header acco-clr2 collapsible-header active">
+                        <span class="icon">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</span>
+                        <p>
+                            <strong>Bachelor Degree of C.A.</strong> - Vikarm University of Ujjain , 2014 - 2015
+                        </p>
+                    </div>
+                    <div class="accordion-body collapsible-body">
+                        <span>
+							Successfully passed MBA’ on year 2015 - 2016 scoring CGPA 4.00 out of 4.00. The study fields were Cpmputer Architecture, Calculus, Physics Fundamental of Physics, Chemistry, Integral Mathematics. ABC University of los Angeles.
+						</span>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="accordion-header acco-clr3 collapsible-header active">
+                        <span class="icon">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</span>
+                        <p>
+                            <strong>Diploma in Computer</strong> - RGCSM , 2013 - 2014
+                        </p>
+                    </div>
+                    <div class="accordion-body collapsible-body">
+                        <span>
+							Successfully passed MBA’ on year 2015 - 2016 scoring CGPA 4.00 out of 4.00. The study fields were Cpmputer Architecture, Calculus, Physics Fundamental of Physics, Chemistry, Integral Mathematics. ABC University of los Angeles.
+						</span>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="accordion-header acco-clr4 collapsible-header active">
+                        <span class="icon">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</span>
+                        <p>
+                            <strong>Higher Secondry Education</strong> - M.p. Board Bhopal , 2012 - 2013
+                        </p>
+                    </div>
+                    <div class="accordion-body collapsible-body">
+                        <span>
+							Successfully passed MBA’ on year 2015 - 2016 scoring CGPA 4.00 out of 4.00. The study fields were Cpmputer Architecture, Calculus, Physics Fundamental of Physics, Chemistry, Integral Mathematics. ABC University of los Angeles.
+						</span>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="accordion-header acco-clr5 collapsible-header active">
+                        <span class="icon">
+							<i class="fa fa-pencil" aria-hidden="true"></i>
+						</span>
+                        <p>
+                            <strong>High School Degree</strong> - M.p. Board Bhopal , 2011 - 2014
+                        </p>
+                    </div>
+                    <div class="accordion-body collapsible-body">
+                        <span>
+							Successfully passed MBA’ on year 2015 - 2016 scoring CGPA 4.00 out of 4.00. The study fields were Cpmputer Architecture, Calculus, Physics Fundamental of Physics, Chemistry, Integral Mathematics. ABC University of los Angeles.
+						</span>
+                    </div>
+                </li> {% endcomment %}
+            </ul>
+
+        </div>
+        <!-- /.education-section -->
+        <!-- ==================== education-section end ==================== -->

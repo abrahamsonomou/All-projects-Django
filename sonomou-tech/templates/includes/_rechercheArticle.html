@@ -1,0 +1,8 @@
+<div class="widget_list widget_search">
+    <h3>Search</h3>
+    <form action="{% url 'search_article' %}">
+        {% csrf_token %}
+        <input placeholder="Search..." type="text" name="article">
+        <button type="submit">search</button>
+    </form>
+</div>

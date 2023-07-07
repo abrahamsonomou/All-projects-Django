@@ -1,0 +1,84 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Blog | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h2>Nos derniers articles</h2>
+            </div>
+            <div class="card-body">
+            <div class="row">
+                {% if articles|length %}
+                    {% for article in articles %}
+                        {% if article.statut %}
+                        <div class="col-12 col-md-4 col-lg-4">
+                          <article class="article article-style-c">
+                            <div class="article-header">
+                              {% if article.image %}
+                              <div class="article-image" data-background="{{article.image.url}}"></div>
+                              {% else %}
+                              <div class="article-image" data-background="{% static 'assets/img/users/default-blog.png' %}"></div>
+                              {% endif %} 
+                            </div>
+                            <div class="article-details">
+                              <div class="article-category"><a href="#">Publié il y a {{article.updated|timesince}}</a>
+                              </div>
+                              <div class="article-title">
+                                 <h5><a href="{% url 'detail_article' article.slug %}">{{article.titre|truncatechars:40}}</a></h5>
+                              </div>
+                              {% if article.description %}
+                              <p>{{article.description|truncatechars:100}}</p>
+                            {% endif %}
+                            <div class="article-user">
+                              {% if article.user.photo %}
+                              <img alt="image" src="{{article.user.photo.url}}">
+                              {% else %}
+                              <img alt="image" src="{% static 'assets/img/users/default-avatar.png' %}">
+                              {% endif %}
+                              <div class="article-user-details">
+                                <div class="user-detail-name">
+                                  {% if article.user.last_name %}
+                                  <a href="#">{{article.user.last_name}} {{article.user.first_name}}</a>
+                                  {% else %}
+                                    <a href="#">{{article.user.username}}</a>
+                                  {% endif %}
+                                </div>
+                                {% if article.user.specialite %}
+                                  <div class="text-job">{{article.user.specialite|truncatechars:40}}</div>
+                                {% endif %}
+                                </div>
+                              </div>
+                            </div>
+                          </article>
+                        </div>
+                        {% endif %} 
+                    {% endfor %}
+              </div>
+                  {% comment %} <!-- Pagination --> {% endcomment %}
+
+                    {% if articles|length %}
+                        {% include "includes/_pagination.html" with page=articles %}
+                    {% endif %} 
+                    
+              {% else %}
+                <div class="accordion">
+                  <div class="accordion-header bg-warning text-center" role="button" data-toggle="collapse" data-target="#panel-body-1"
+                      aria-expanded="true">
+                      <h2>Avertissement !</h2>
+                  </div>
+                  <div class="accordion-body collapse show text-center" id="panel-body-1" data-parent="#accordion">
+                      <h1 class="mb-0">Aucun article n'a été publié!</h1>
+                  </div>
+                  </div>
+              {% endif %}
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

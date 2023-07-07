@@ -1,0 +1,59 @@
+{% load static %}
+<header id="header" class="header fixed-top" data-scrollto-offset="0">
+  <div
+    class="container-fluid d-flex align-items-center justify-content-between"
+  >
+    <a
+      href="index.html"
+      class="logo d-flex align-items-center scrollto me-auto me-lg-0"
+    >
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="{% static 'assets-web/img/logo.png' %}" alt=""> -->
+      <h1>SONOMOU.TECH<span>.</span></h1>
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        {% comment %} <li><a href="{% url 'about'%}">About</a></li> {% endcomment %}
+        {% comment %} <li><a href="{% url 'formation'%}">Formations</a></li> {% endcomment %}
+        <li><a href="{% url 'team'%}">Team</a></li>
+        <li><a href="{% url 'blog'%}">Blog</a></li>
+        {% comment %} <li><a href="{% url 'book'%}">Books</a></li> {% endcomment %}
+        <li><a href="{% url 'tutoriel'%}">Tutoriels</a></li>
+        <li><a href="{% url 'formations'%}">Formations</a></li>
+        {% comment %} <li><a href="{% url 'newletter'%}">newletter</a></li> {% endcomment %}
+        
+        {% comment %} <li class="dropdown megamenu"><a href="#"><span>Ressources</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <ul>
+            <li>
+              <a href="{% url 'book'%}">Books</a>
+              <a href="{% url 'tutoriel'%}">Tutoriels</a>
+              <a href="#">Column 1 link 3</a>
+            </li>
+            <li>
+              <a href="#">Column 2 link 1</a>
+              <a href="#">Column 2 link 2</a>
+              <a href="#">Column 3 link 3</a>
+            </li>
+            <li>
+              <a href="#">Column 3 link 1</a>
+              <a href="#">Column 3 link 2</a>
+              <a href="#">Column 3 link 3</a>
+            </li>
+   
+          </ul>
+        </li> {% endcomment %}
+        
+        {% comment %} <li><a href="{% url 'contact' %}">Contact</a></li> {% endcomment %}
+        {% comment %} <li><a href="{% url 'formation' %}" target="_blank">Formation</a></li> {% endcomment %}
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle d-none"></i>
+    </nav>
+    <!-- .navbar -->
+
+{% comment %} <a class="btn-getstarted scrollto " href="#">Connexion</a> {% endcomment %}
+{% comment %} <a class="btn-getstarted scrollto " href="#">Connexion</a> {% endcomment %}
+{% comment %} {% url 'login' %} {% endcomment %}
+  </div>
+</header>

@@ -1,0 +1,84 @@
+{% extends 'includes/_base_pages.html' %}
+{% block title %}SONOMOU.TECH - BlogDetail{% endblock title %}
+{% block bread1 %}Blog Detail{% endblock bread1 %}
+{% block bread2 %}BlogDetail{% endblock bread2 %}
+
+{% block content %}
+{% load static %}
+
+   <!-- ======= Blog Section ======= -->
+   <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row g-5">
+
+        <div class="col-lg-8">
+
+          <article class="blog-details">
+
+            <div class="post-img">
+              <img src="{{article.image.url}}" alt="" class="img-fluid">
+            </div>
+
+            <h2 class="title">{{article.titre}}</h2>
+
+            <div class="meta-top">
+              <ul>
+                <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'detail_article' article.slug %}">{{article.auteur}}</a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'detail_article' article.slug %}"><time datetime="2022-01-01">Publié il y a {{article.plublish|timesince}}</time></a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-clipboard-check"></i> <a href="{% url 'detail_article' article.slug %}"><a href="#"> {{article.categorie}}</a></a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="{% url 'detail_article' article.slug %}">12 Comments</a></li>
+              </ul>
+            </div>
+
+            <div class="content">
+              {{ article.description.html|safe}}
+            </div><!-- End post content -->
+
+            {% comment %} <div class="meta-bottom">
+              <i class="bi bi-folder"></i>
+              <ul class="cats">
+                <li><a href="#">Business</a></li>
+              </ul>
+
+              <i class="bi bi-tags"></i>
+              <ul class="tags">
+                <li><a href="#">Creative</a></li>
+                <li><a href="#">Tips</a></li>
+                <li><a href="#">Marketing</a></li>
+              </ul>
+            </div> {% endcomment %}
+            
+            <!-- End meta bottom -->
+
+          </article><!-- End blog post -->
+
+   
+        </div>
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+
+                {% comment %} recherche {% endcomment %}
+                {% include 'includes/recherche.html' %}
+
+                {% comment %} categorie {% endcomment %}
+                {% include 'includes/cat.html' %}
+
+                {% comment %} recents articles {% endcomment %}
+                {% include 'includes/article_en_relation.html' %}
+
+                {% comment %} tag {% endcomment %}
+                {% include 'includes/tag.html' %}
+          </div><!-- End Blog Sidebar -->
+
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Blog Section -->
+
+  
+{% endblock content %}

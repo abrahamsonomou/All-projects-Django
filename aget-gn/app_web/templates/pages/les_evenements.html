@@ -1,0 +1,122 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Les evenements | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            
+            {% comment %} <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Ajout des évenements</h4>
+                </div>
+                <div class="card-body">
+                  <div class="card-body pb-0">
+                    <form class="" action="" method="POST" > 
+                      {% csrf_token %}
+
+                      <div class="form-group">
+                        <label>Titre</label>
+                        {{form.titre_event}}
+                      </div>
+                      <div class="form-group">
+                        <label>Date de l'évenement</label>
+                        {{form.dateEv}}
+                      </div>
+                      <div class="form-group">
+                        <label>Lieu</label>
+                        {{form.lieu}}
+                      </div>
+                      <div class="form-group">
+                        <label>L'heure de l'évenement</label>
+                        {{form.heure}}
+                      </div>
+                      <div class="form-group">
+                        <label>Lien</label>
+                        {{form.lien}}
+                      </div>
+                      <div id="image-preview" class="image-preview">
+                        <label for="image-upload" id="image-label">Choose File</label>
+                        {{form.image}}
+                      </div>
+                      <div class="form-group">
+                        <label>Description</label>
+                        {{form.description}}
+                      </div>
+                      <button type="submit" class="btn btn-primary m-t-15 waves-effect">Ajouter</button>
+                      <input type="reset" class="btn btn-danger m-t-15" value="Effacer">
+    
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div> {% endcomment %}
+
+            {% comment %} <div class="col-lg-8 col-md-12 col-12 col-sm-12"> {% endcomment %}
+              <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Les evenements de l'AGET</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <tr>
+                          <th>
+                            Image
+                          </th>
+                          <th>Titre</th>
+                          <th>Date</th>
+                          <th>Lien</th>
+                          <th>Heure</th>
+                          <th>Action</th>
+                        </tr>
+
+                        {% for evenement in list_evenements%}
+                        <tr>
+                          <td >
+                            <a href="#">
+                    {% if evenement.image %}
+                              <img alt="image" src="{{evenement.image.url}}" class="" width="70"
+                                data-toggle="title" title="">
+                    {% else %}
+                                <img alt="image" src="{% static 'assets/img/users/default-blog.png' %}" class="" width="70"
+                                data-toggle="title" title="">
+                   {% endif %} 
+
+                              <span class="d-inline-block ml-1"></span>
+                            </a>
+                          </td>
+                          <td>{{evenement.titre_event}}</td>
+                          <td class="align-middle">
+                            {{evenement.dateEv}}
+                          </td>
+                          <td>{{evenement.lien}}</td>
+                          <td>{{evenement.heure}}</td>
+                          <td>
+                            {% if has_perm_change %}
+                            <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                                class="fas fa-pencil-alt"></i></a>
+                                {% endif %}
+                                {% if has_perm_delete %}
+                            <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                              data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                              data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                              {% endif %}
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+    </div>
+</section>
+{% endblock content %}
+
+ 

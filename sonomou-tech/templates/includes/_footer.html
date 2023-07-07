@@ -1,0 +1,95 @@
+    {% load static %}
+    {% comment %} <!--footer area start--> {% endcomment %}
+    <footer class="footer_widgets">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="widgets_container contact_us">
+                        <div class="footer_logo">
+                            <h2 style="color: #fff;"><a href="{% url 'index' %}">SONOMOU.TECH</a></h2>
+                            <!-- <a href="#"><img src="{% static 'assets-main/img/logo/logo.png' %}" alt=""></a> -->
+                        </div>
+                        <div class="footer_contact">
+                            <p>SONOMOU.TECH est une agence de création et d’innovation dans le domaine du digital. Nous sommes spécialisés dans le développement web et mobile, les infrastructures informatique et télécom et la formation.</p>
+                            <p>Sur ce site, nous partageons des articles sur le developpement web, le reseau informatique et la securité informatique.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="widgets_container widget_menu">
+                        <h3>Liens du site</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li><a href="{% url 'index' %}">Acceuil</a></li>
+                                <li><a href="{% url 'blog' %}">blog</a></li>
+                                <li><a href="{% url 'tutoriel' %}">Tutoriels</a></li>
+                                <li><a href="{% url 'contact' %}"> Contactez-nous!</a></li>
+
+                                <!-- <li><a href="blog.html">Delivery Information</a></li>
+                                <li><a href="contact.html">Privacy Policy</a></li>
+                                <li><a href="services.html">Terms & Conditions</a></li>
+                                <li><a href="#">Returns</a></li>
+                                <li><a href="#">Gift Certificates</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 col-sm-6">
+                    <div class="widgets_container widget_menu">
+                        <h3>Liens utils</h3>
+                        <div class="footer_menu">
+                            <ul>
+                                <li>
+                                    <i class="bi bi-chevron-right"></i> <a href="https://grafikart.fr/" target="_blank">grafikart</a>
+                                  </li>
+                                <li>
+                                  <a href="https://openclassrooms.com/" target="_blank">openclassrooms</a>
+                                </li>
+                                <li>
+                                  <a href="https://www.pierre-giraud.com/" target="_blank">pierre-giraud</a>
+                                </li>
+                                <li>
+                                  <i class="bi bi-chevron-right"></i> <a href="https://getfreecourses.co/" target="_blank">getfreecourses</a>
+                                </li>
+                                <li>
+                                  <a href="https://waytolearnx.com/" target="_blank">waytolearnx</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" >
+                    <div class="widgets_container newsletter">
+                        <h3>Follow Us</h3>
+                        <div class="footer_social_link">
+                            <ul>
+                                <li><a class="facebook" href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="twitter" href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="instagram" href="#" title="instagram"><i class="fa fa-instagram"></i></a></li>
+                                <li><a class="linkedin" href="#" title="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a class="rss" href="#" title="rss"><i class="fa fa-rss"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="subscribe_form">
+                            <h3>Join Our Newsletter Now</h3>
+                            <form id="mc-form" class="mc-form footer-newsletter" >
+                                <input id="mc-email" type="email" autocomplete="off" placeholder="Your email address..." />
+                                <button id="mc-submit">Subscribe!</button>
+                            </form>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts text-centre">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div><!-- mailchimp-alerts end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </footer>
+    {% comment %} <!--footer area end-->
+<!-- JS
+============================================ --> {% endcomment %}

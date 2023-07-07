@@ -1,0 +1,63 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Ajout cotisation | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Effectuer votre cotisation</h4>
+            </div>
+            <div class="card-body">
+              <form class="form-signin" action="" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Moyen de paiement</label>
+                  <div class="col-sm-12 col-md-7">
+                    
+                      <select name="mode_payement" class="form-control" required="" id="id_mode_payement">
+        <option value="" selected="">---------</option>
+      
+        <option value="FlOOZ">FlOOZ</option>
+      
+        <option value="TMONEY">TMONEY</option>
+      
+      </select>
+      
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Motif</label>
+                  <div class="col-sm-12 col-md-7">
+                  {{form.motif}}
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Montant</label>
+                  <div class="col-sm-12 col-md-7">
+                  {{form.montant}}
+                  </div>
+                </div>
+              
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Numero</label>
+                  <div class="col-sm-12 col-md-7">
+                  {{form.telephone}}
+                  </div>
+                </div>
+                <div class="form-group row mb-4">
+                  <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                  <div class="col-sm-12 col-md-7">
+                    <button class="btn btn-primary">Effectuer</button>
+                  </div>
+                </div>
+              </div>
+              </form>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

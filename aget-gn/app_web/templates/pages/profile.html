@@ -1,0 +1,349 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Profile | AGET{% endblock title %}
+{% block content %}
+{% if user.is_authenticated %}
+<section class="section">
+    <div class="section-body">
+      <div class="row mt-sm-4">
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="card author-box">
+            <div class="card-body">
+              <div class="author-box-center">
+             {% if user.photo %}
+                <img alt="image" src="{{user.photo.url}}" class="rounded-circle author-box-picture">
+            {% else %}
+            <img alt="image" src="{% static 'assets-aget/img/users/default-avatar.png' %}" class="user-img-radious-style mb-3"> 
+            {% endif %} 
+                <div class="clearfix"></div>
+                <div class="author-box-name">
+                  
+                  {% if user.last_name %}
+                  <a href="#">{{user.last_name}} {{user.first_name}}</a>
+                  {% else %}
+                  <a href="#">{{user.username}}</a>
+                  {% endif %}
+                </div>
+                
+                {% if user.specialite %}
+                <div class="author-box-job">{{user.formation}}: {{user.specialite}}</div>
+                {% endif %}
+              </div>
+              <div class="text-center">
+                {% comment %} <div class="author-box-description">
+                  <p>
+                    {{user.detail}}
+                  </p>
+                </div> {% endcomment %}
+                {% comment %} <div class="mb-2 mt-3">
+                  <div class="text-small font-weight-bold">Suivez-moi sur </div>
+                </div>
+                <a href="{{user.facebook}}" class="btn btn-social-icon mr-1 btn-facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="{{user.twitter}}" class="btn btn-social-icon mr-1 btn-twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="{{user.instagram}}" class="btn btn-social-icon mr-1 btn-instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="{{user.linkdin}}" class="btn btn-social-icon mr-1 btn-instagram">
+                  <i class="fab fa-instagram"></i>
+                </a> {% endcomment %}
+                <div class="w-100 d-sm-none"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <h4>Personal Details</h4>
+            </div>
+            <div class="card-body">
+              <div class="py-4">
+                <p class="clearfix">
+                  <span class="float-left">
+                    Naissance
+                  </span>
+                  
+                  {% if user.date_naissance %}
+                    <span class="float-right text-muted">
+                    {{user.date_naissance}}
+                  </span>
+                  {% endif %}
+                  
+                </p>
+                <p class="clearfix">
+                  <span class="float-left">
+                    Telephone
+                  </span>
+                  
+                  {% if user.telephone %}
+                      <span class="float-right text-muted">
+                    {{user.telephone}}
+                  </span>
+                  {% endif %}
+                </p>
+                <p class="clearfix">
+                  <span class="float-left">
+                    Email
+                  </span>
+                  
+                  {% if user.email %}
+                     <span class="float-right text-muted">
+                    {{user.email}}
+                  </span>
+                  {% endif %}
+                 
+                </p>
+                <p class="clearfix">
+                  <span class="float-left">
+                    Facebook
+                  </span>
+                  
+                  {% if user.facebook %}
+                     <span class="float-right text-muted">
+                    <a href="{{user.facebook}}">{{user.facebook}} </a>
+                  </span>
+                  {% endif %}
+                 
+                </p>
+                <p class="clearfix">
+                  
+                  {% if user.twitter %}
+                     <span class="float-right text-muted">
+                    <a href="{{user.twitter}}">{{user.twitter}}</a>
+                  </span>
+                  {% endif %}
+                    
+                  <span class="float-left">
+                    Twitter
+                  </span>
+                 
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 col-lg-8">
+          <div class="card">
+            <div class="padding-20">
+              <ul class="nav nav-tabs" id="myTab2" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active" id="home-tab2" data-toggle="tab" href="#about" role="tab"
+                    aria-selected="true">A propos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#settings" role="tab"
+                    aria-selected="false">Parametres</a>
+                </li>
+              </ul>
+              <div class="tab-content tab-bordered" id="myTab3Content">
+                <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="home-tab2">
+                  <div class="row">
+                    <div class="col-md-3 col-6 b-r">
+
+                      <strong>Formation</strong>
+                      <br>
+                      
+                      {% if user.formation %}
+                        <p class="text-muted">{{user.formation}}</p>
+                      {% endif %}
+                      
+                    </div>
+                    <div class="col-md-3 col-6 b-r">
+                      <strong>Année d'arrivée</strong>
+                      <br>
+                      
+                      {% if user.annee %}
+                         <p class="text-muted">{{user.annee}}</p>
+                      {% endif %}
+                     
+                    </div>
+                    <div class="col-md-3 col-6 b-r">
+                      <strong>Université/Ecole</strong>
+                      <br>
+                      
+                      {% if user.ecole %}
+                             <p class="text-muted">{{user.ecole}}</p>
+                      {% endif %}
+                        
+                    </div>
+                    <div class="col-md-3 col-6">
+                      <strong>Adresse</strong>
+                      <br>
+                      
+                      {% if user.adresse %}
+                        <p class="text-muted">{{user.adresse}}</p>
+                      {% endif %}
+                      
+                    </div>
+                  </div>
+                  
+                  {% if user.detail %}
+                     <p class="m-t-30"> 
+                    {{user.detail|truncatechars:100}}
+                  </p>
+                  {% endif %}
+                    
+                </div>
+                <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
+                  
+                  <form class="needs-validation" action="" method="POST" enctype="multipart/form-data"> 
+                    {% csrf_token %}
+                    <div class="card-header">
+                      <h4>Edit Profile</h4>
+                    </div>
+                    {% if messages %}
+                    {% for message in messages %}
+                      <div class="alert alert-danger text-center">
+                          <strong>{{message}}</strong>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="form-group col-md-6 col-12">
+                          <label>Prenom</label>
+                          {% if form.first_name.errors %}
+                          {% for error in form.username.errors %}
+                          <div class="div-error-{{form.first_name.name}}">
+                          <small class="text-danger">{{error}}</small>
+                          </div>
+                          {% endfor %}
+                          {% endif %}
+                          {{form.first_name}}
+                          <div class="invalid-feedback">
+                            Please fill in the first name
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6 col-12">
+                          <label>Nom</label>
+                          {{form.last_name}}
+                          <div class="invalid-feedback">
+                            Please fill in the last name
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-md-7 col-12">
+                          <label>Email</label>
+                          {{form.email}}
+                          <div class="invalid-feedback">
+                            Please fill in the email
+                          </div>
+                        </div>
+                        <div class="form-group col-md-5 col-12">
+                          <label>Telephone</label>
+                          {{form.telephone}}
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                        <div class="form-group col-md-9 col-12">
+                          <label>Université/Ecole</label>
+                          {{form.ecole}}
+
+                        </div>
+                        <div class="form-group col-md-3 col-12 ">
+                          <label>Année d'arrivée</label>
+                          {{form.annee}}
+
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-7 col-12">
+                          <label>Formation</label>
+                          {{form.formation}}
+
+                        </div>
+                        <div class="form-group col-md-5 col-12">
+                          <label>Specialite</label>
+                          {{form.specialite}}
+
+                        </div>
+                      </div>
+                     
+                      <div class="row">
+                        <div class="form-group col-md-9 col-12">
+                          <label>Adresse</label>
+                          {{form.adresse}}
+
+                        </div>
+                        <!-- <div class="form-group col-md-4 col-12">
+                          <label>Date de Naissance</label>
+                          <input type="tel" class="form-control" value="">
+                        </div> -->
+                        <div class="form-group col-md-3 col-12 ">
+                          <label>Date de Naissance</label>
+                          {{form.date_naissance}}
+
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="form-group col-md-6 col-12">
+                          <label>Facebook</label>
+                          {{form.facebook}}
+
+                          <div class="invalid-feedback">
+                            Please fill in the email
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6 col-12">
+                          <label>Twitter</label>
+                          {{form.twitter}}
+
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-6 col-12">
+                          <label>Instagram</label>
+                          {{form.instagram}}
+
+                          <div class="invalid-feedback">
+                            Please fill in the email
+                          </div>
+                        </div>
+                        <div class="form-group col-md-6 col-12">
+                          <label>Linkdln</label>
+                          {{form.linkdin}}
+
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="form-group col-md-12 col-12">
+                          <label>Resumé</label>
+                          {{form.detail}}
+
+                        </div>
+                      </div>
+
+                      <div class="form-group row mb-4">
+                        <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Photo</label>
+                        <div class="col-sm-12 col-md-7">
+                          <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label">Choisi une photo</label>
+                            {{form.photo}}
+
+                          </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-right">
+                      <button class="btn btn-primary">Save Changes</button>
+                    </div>
+                  </form>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+{% endblock content %}

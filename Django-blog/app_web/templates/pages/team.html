@@ -1,0 +1,47 @@
+{% extends 'includes/_base_client.html' %}
+{% load static %}
+{% block title %}equipe{% endblock title %}
+{% block titre %}Notre equipe{% endblock titre %}
+{% block titre1 %}Notre equipe{% endblock titre1 %}
+{% block back %}url('{% static 'assets-client/img/team-header.jpg' %}'){% endblock back %}
+{% block content %}
+    <!-- ======= Team Section ======= -->
+   {% if list_teams|length %}
+    <section id="team" class="team">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>Notre equipe</h2>
+  
+          </div>
+  
+          <div class="row gy-4">
+  
+          {% for team in list_teams %}
+
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="team-member">
+                <div class="member-img">
+                  <img src="{{team.photo.url}}" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href="{{team.twitter}}"><i class="bi bi-twitter"></i></a>
+                  <a href="{{team.facebook}}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{team.instagram}}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{team.linkdin}}"><i class="bi bi-linkedin"></i></a>
+                  </div>
+                </div>
+                <div class="member-info">
+                  <h4>{{team.nom}}</h4>
+                  <span>{{team.specialite}}</span>
+                </div>
+              </div>
+            </div><!-- End Team Member -->
+            {% endfor %}
+ 
+          </div>
+  
+        </div>
+      </section><!-- End Team Section -->
+      
+      {% endif %}
+{% endblock content %}

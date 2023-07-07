@@ -1,0 +1,86 @@
+{% extends 'includes/_base_client.html' %}
+{% load static %}
+{% block title %}contact{% endblock title %}
+{% block titre %}Contact{% endblock titre %}
+{% block titre1 %}Contact{% endblock titre1 %}
+{% block back %}url('{% static 'assets-client/img/contact-header.jpg' %}'){% endblock back %}
+{% block content %}
+    <!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+  <div class="container position-relative" data-aos="fade-up">
+
+    <div class="row gy-4 d-flex justify-content-end">
+
+      <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="info-item d-flex">
+          <i class="bi bi-geo-alt flex-shrink-0"></i>
+          <div>
+            <h4>Location:</h4>
+            <p>A108 Agbalepedo - Lome, TOGO</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex">
+          <i class="bi bi-envelope flex-shrink-0"></i>
+          <div>
+            <h4>Email:</h4>
+            <p>contact@sonomou.tech</p>
+          </div>
+        </div><!-- End Info Item -->
+
+        <div class="info-item d-flex">
+          <i class="bi bi-phone flex-shrink-0"></i>
+          <div>
+            <h4>Call:</h4>
+            <p>+228 70 02 69 94</p>
+          </div>
+        </div><!-- End Info Item -->
+
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+        {% comment %} {% if messages %}
+        {% for message  in messages %}
+        <div {% if message.tags %} class="{{message.tags}}" {% endif %}>
+            {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}  {% endcomment %}
+        
+        <form action="" method="POST" class="php-email-form">
+        {% csrf_token %}           
+
+          <div class="row">
+            <div class="col-md-6 form-group">
+              {{form.nom}}
+              {% comment %} <input type="text" name="nom" class="form-control" id="nom" placeholder="Votre nom" required> {% endcomment %}
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              {{form.email}}
+
+              {% comment %} <input type="email" class="form-control" name="email" id="email" placeholder="Votre Email" required> {% endcomment %}
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            {{form.sujet}}
+
+            {% comment %} <input type="text" class="form-control" name="subject" id="subject" placeholder="subject" required> {% endcomment %}
+          </div>
+          <div class="form-group mt-3">
+            {{form.message}}
+
+            {% comment %} <textarea class="form-control" name="contenu" rows="5" placeholder="Message" required></textarea> {% endcomment %}
+          </div>
+         
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+
+      </div><!-- End Contact Form -->
+
+    </div>
+
+  </div>
+</section><!-- End Contact Section -->
+
+{% endblock content %}

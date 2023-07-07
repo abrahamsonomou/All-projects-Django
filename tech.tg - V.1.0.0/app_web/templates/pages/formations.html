@@ -1,0 +1,48 @@
+{% extends 'includes/_base_pages.html' %}
+{% block title %}SONOMOU.TECH - Formations{% endblock title %}
+{% block bread1 %}Formations{% endblock bread1 %}
+{% block bread2 %}Formations{% endblock bread2 %}
+
+{% block content %}
+{% load static %}
+
+{% if list_formations|length %}
+<section id="services" class="services">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-header">
+      <h2>Nos Formations</h2>
+      {% comment %} <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p> {% endcomment %}
+    </div>
+
+    <div class="row gy-5">
+
+      {% for formation in list_formations %}
+
+      <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+        <div class="service-item">
+          <div class="img">
+            <img src="{{formation.image.url}}" class="img-fluid" alt="">
+          </div>
+          <div class="details position-relative">
+            <div class="icon">
+              <i><p>New</P></i>
+              
+            </div>
+            <a href="{% url 'detail_formations' formation.slug %}" class="stretched-link">
+              <h3>{{formation.titre|truncatechars:30}}</h3>
+            </a>
+            <p>{{formation.description1|truncatechars:100}}</p>
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+      {% endfor %}
+
+    </div>
+        
+  </div>
+
+</section>
+{% endif %}
+
+{% endblock content %}

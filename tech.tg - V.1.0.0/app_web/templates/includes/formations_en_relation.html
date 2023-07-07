@@ -1,0 +1,20 @@
+<div class="sidebar-item recent-posts">
+    <h3 class="sidebar-title">Formations en relation</h3>
+
+    <div class="mt-3">
+
+   {% for ar in formations_en_relation %}
+   {% if ar.id != article.id %}
+      <div class="post-item">
+        <img src="{{ar.image.url}}" alt="" class="flex-shrink-0">
+        <div>
+          <h4><a href="{% url 'detail_formations' ar.slug %}">{{ar.titre}}</a></h4>
+          <time datetime="2020-01-01">Jan 1, 2020</time>
+        </div>
+      </div><!-- End recent post item-->
+
+      {% endif %}
+      {% endfor %}
+    </div>
+
+  </div><!-- End sidebar recent posts-->

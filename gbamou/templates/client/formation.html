@@ -1,0 +1,56 @@
+{% load static %}
+        <!-- ==================== experience-section start ==================== -->
+        <div data-scroll='6' class="experience-section sec-p100-bg-bs mb-30 clearfix" id="formation">
+
+            <div class="Section-title">
+                <h2>
+					<i class="fa fa-pencil" aria-hidden="true"></i>
+					Formations
+				</h2>
+                <span>Formations</span>
+                {% for info in infos %}
+                {% if info.formation %}
+                <p>{{info.formation.html|safe}}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <!-- /.Section-title -->
+
+            <div class="row">
+                {% if formations %}
+
+                <div class="col 22 m12 s12">
+                    <div class="experience-left">
+                        <div class="experience-left-item-area">
+                            <div class="border-left">
+                                {% for formation in formations %}
+
+                                <div class="experience-item exp1">
+                                    <h2 class="title">{{formation.titre}}</h2>
+                                    <ul class="post-mate ul-li">
+                                        <li class="photoshop-color">{{formation.periode}}</li>
+                                        {% comment %} <li class="photoshop-color">{{formationperiode}} <span class="current photoshop-bg">Current</span></li> {% endcomment %}
+                                    </ul>
+                                    <!-- /.post-mate -->
+                                    <p>{{formation.description.html|safe}}</p>
+                                    <a href="{% if formation.site %}{{formation.site}}{% else %}#!{% endif %}" class="photoshop-color">{{formation.entreprise}}</a>
+                                </div>
+                                <!-- /.experience-item -->
+                                {% endfor %}
+
+                            </div>
+                            <!-- border-left -->
+                        </div>
+                        <!-- /.experience-left-item-area -->
+
+                    </div>
+                    <!-- /.experience-left -->
+                </div>
+                <!-- colm8 -->
+                {% endif %}
+            </div>
+            <!-- row -->
+
+        </div>
+        <!-- /.experience-section -->
+        <!-- ==================== experience-section end ==================== -->

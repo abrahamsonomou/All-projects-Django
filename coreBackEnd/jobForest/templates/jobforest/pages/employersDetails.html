@@ -1,0 +1,668 @@
+{% extends 'jobforest/includes/_base.html' %}
+{% load static %}
+{% block title %}Employers{% endblock title %}
+{% block header %}
+		<!--************************************
+				breadcrumbarea start
+		*************************************-->
+		<div class="jf-breadcrumbarea">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<ol class="jf-breadcrumb">
+							<li><a href="{% url 'jobforestHome' %}">Home</a></li>
+							<li class="jf-active">Employers Details</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				breadcrumbarea End
+		*************************************-->
+{% endblock header %}
+{% block content %}
+			<!--************************************
+					Blog Grid Start
+			*************************************-->
+			<div class="jf-haslayout jf-sectionspace">
+				<div class="container">
+					<div class="row">
+						<div id="jf-twocolumns" class="jf-twocolumns">
+							<div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9 float-left">
+								<div class="jf-jobapplycenter jf-jobapplycentervtwo">
+									<figure class="jf-companyimg">
+										<img src="{% static 'assets-jobforest/images/topcompanies/img-04.png' %}" alt="image description">
+									</figure>
+									<div class="jf-companycontent">
+										<div class="jf-jobapplydetails">
+											<div class="jf-companyname">
+												<h3><a href="javascript:void(0);">VAV of Oceans</a></h3>
+												<span>Member Since: Jun 27, 2010</span>
+												<ul class="jf-postarticlemetavthree">
+													<li>
+														<a href="javascript:void(0);">
+															<i class="lnr lnr-eye"></i>
+															<span>1,744,588 views</span>
+														</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);">
+															<i class="lnr lnr-bug"></i>
+															<span>Report Profile</span>
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="jf-jobapplybtnlike">
+											<div class="jf-likebtnbox">
+												<a href="javascript:void(0);" class="jf-btn jf-active">Following</a>
+												<a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+											</div>
+											<ul class="jf-socialiconssimple">
+												<li class="jf-sharejob"><span>Share this job</span></li>
+												<li class="jf-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook-f"></i></a></li>
+												<li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
+												<li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+												<li class="jf-clone"><a href="javascript:void(0);"><i class="far fa-clone"></i></a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="jf-jobschedules">
+									<ul class="jf-themenavtabs nav navbar-nav">
+										<li class="nav-item">
+											<a class="active" id="home-tab" data-toggle="tab" href="#about">About</a>
+										</li>
+										<li class="nav-item">
+											<a id="profile-tab" data-toggle="tab" href="#openjobs">Open Jobs</a>
+										</li>
+										<li class="nav-item">
+											<a id="messages-tab" data-toggle="tab" href="#gallery">Gallery</a>
+										</li>
+										<li class="nav-item">
+											<a id="settings-tab" data-toggle="tab" href="#qa">Q&amp;A</a>
+										</li>
+										<li class="nav-item">
+											<a id="contact-tab" data-toggle="tab" href="#contact">Contact</a>
+										</li>
+									</ul>
+									<div class="jf-tabcontent tab-content">
+										<div class="jf-jobdetails jf-abouttab jf-tabpane tab-pane active fade show" id="about">
+											<div class="jf-jobdetaildescription">
+												<div class="jf-title">
+													<h2>Introduction</h2>
+												</div>
+												<div class="jf-description">
+													<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+													<div class="jf-jobdescription">
+														<span>Labois niisie ut commodo consequat aute</span>
+														<span>Irure dolor in reprehenderit ineuptate</span>
+														<span>Velit esse cillum dolore eu fugiat nulla pariatur</span>
+														<span>qui dolorem ipsum quia dolor sit amet</span>
+													</div>
+													<p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+													<figure class="jf-employerdetailsimg">
+														<img src="{% static 'assets-jobforest/images/img-01.jpg' %}" alt="images description">
+													</figure>
+													<p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+													<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit ed quia consequuntur magni dlores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia deolor sit ameteis consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore etiame dolore magnam aliquam quaerat voluptatem.</p>
+													<div class="jf-video jf-videovtwo">
+														<figure><a data-rel="prettyPhoto[video]" href="https://www.youtube.com/watch?v=J37W6DjqT3Q"><img src="{% static 'assets-jobforest/images/blogdetail/img-08.jpg' %}" alt="image description"></a></figure>
+													</div>
+													<p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+													<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit ed quia consequuntur magni dlores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia deolor sit ameteis consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore etiame dolore magnam aliquam quaerat voluptatem.</p>
+												</div>
+											</div>
+										</div>
+										<div class="jf-jobdetails jf-tabpane tab-pane fade" id="openjobs">
+											<div class="jf-jobdetaildescription">
+												<div class="jf-title">
+													<h2>Open Jobs</h2>
+												</div>
+												<div class="jf-featurejobs">
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Full Time</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Sales Executive - Call Center</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Part Time</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Sales And Marketing Head</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-homebasejob" href="javascript:void(0);">Home Base</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Admin Officer</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-internship" href="javascript:void(0);">Internship</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Sales Executive - Call Center</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-fulltimejob" href="javascript:void(0);">Full Time</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike jf-btnliked" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Sales Executive - Call Center</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-parttimejob" href="javascript:void(0);">Part Time</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Sales And Marketing Head</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-homebasejob" href="javascript:void(0);">Home Base</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Admin Officer</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+													<div class="jf-featurejob">
+														<div class="jf-companycontent">
+															<div class="jf-companyhead">
+																<a class="jf-btnjobtag jf-internship" href="javascript:void(0);">Internship</a>
+																<div class="jf-rightarea">
+																	<a class="jf-tagfeature" href="javascript:void(0);">feature</a>
+																	<a class="jf-btnlike" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+																</div>
+															</div>
+															<div class="jf-companyname">
+																<h3><a href="javascript:void(0);">Sales Executive - Call Center</a></h3>
+																<span>VAV of Oceans, Los Angeles</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="jf-jobdetails jf-tabgallery tab-pane fade" id="gallery">
+											<div class="jf-jobdetaildescription">
+												<div class="jf-tabgallery">
+													<ul id="jf-tabgalleryimgs" class="jf-tabgalleryimgs">
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-01.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-01.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-02.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-02.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-03.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-03.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-04.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-04.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-05.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-05.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-06.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-06.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-07.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-07.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-08.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-08.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-09.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-09.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-10.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-10.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-11.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-11.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-12.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-12.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-13.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-13.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-14.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-14.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+														<li>
+															<a href="{% static 'assets-jobforest/images/gallery/popupimgs/img-15.jpg' %}">
+																<figure>
+																	<img src="{% static 'assets-jobforest/images/gallery/img-15.jpg' %}" alt="img description">
+																</figure>
+															</a>
+														</li>
+													</ul>
+													<nav class="jf-pagination">
+														<ul>
+															<li class="jf-prevpage"><a href="javascript:void(0);"><i class="fa fa-angle-left"></i> Previous</a></li>
+															<li class="jf-active"><a href="#">01</a></li>
+															<li><a href="javascript:void(0);">02</a></li>
+															<li><a href="javascript:void(0);">03</a></li>
+															<li><a href="javascript:void(0);">04</a></li>
+															<li><a href="javascript:void(0);">05</a></li>
+															<li><a href="javascript:void(0);"></a></li>
+															<li class="jf-nextpage"><a href="javascript:void(0);">Next <i class="fa fa-angle-right"></i></a></li>
+														</ul>
+													</nav>
+												</div>
+											</div>
+										</div>
+										<div class="jf-jobdetails jf-qapolicys tab-pane fade" id="qa">
+											<div class="jf-jobdetaildescription">
+												<div class="jf-qapolicy">
+													<span>Consectetur adipisicing elit sed do eiusmod tempor incididunt utaena lokate labore et dolore <a href="javascript:void(0);">Privacy Policy</a></span>
+												</div>
+												<div class="jf-title">
+													<h2>Ask Your Question</h2>
+												</div>
+												<form class="jf-formtheme jf-askjobform">
+													<fieldset>
+														<div class="form-group jf-inputwithicon">
+															<i class="lnr lnr-bubble"></i>
+															<input type="text" name="fullname" class="form-control" placeholder="Add a Question Title Here">
+														</div>
+														<div class="jf-selectholder jf-inputwithicon">
+															<i class="lnr lnr-layers"></i>
+															<span class="jf-select">
+																<select data-placeholder="All" name="Select Category">
+																	<option value="hamilton">Select Category</option>
+																	<option value="leeds">Leeds</option>
+																	<option value="leicester">Leicester</option>
+																	<option value="liverpool">Liverpool</option>
+																	<option value="london">London</option>
+																	<option value="louisville">Louisville</option>
+																	<option value="manchester">Manchester</option>
+																	<option value="sheffield">Sheffield</option>
+																</select>
+															</span>
+														</div>
+														<div class="form-group jf-inputwithicon">
+															<i class="lnr lnr-bubble"></i>
+															<textarea name="message" class="form-control" placeholder="What Would You Like To Ask?"></textarea>
+														</div>
+														<div class="form-group">
+															<button class="jf-btn jf-active" type="button">Submit</button>
+														</div>
+													</fieldset>
+												</form>
+												<div class="jf-questions">
+													<div class="jf-title">
+														<h2>2,534,304 Questions</h2>
+														<div class="jf-questionslect">
+															<span>Sort by:</span>
+															<span class="jf-select">
+																<select data-placeholder="All" name="Select Category">
+																	<option value="hamilton">Interviews</option>
+																	<option value="leeds">Leeds</option>
+																	<option value="leicester">Leicester</option>
+																	<option value="liverpool">Liverpool</option>
+																	<option value="london">London</option>
+																	<option value="louisville">Louisville</option>
+																	<option value="manchester">Manchester</option>
+																	<option value="sheffield">Sheffield</option>
+																</select>
+															</span>
+														</div>
+													</div>
+													<div class="jf-interviewprocess">
+														<div class="jf-title">
+															<h2>
+																<a href="javascript:void(0);">What is the interview process like?</a>
+															</h2>
+															<span>June 27, 2019</span>
+														</div>
+														<div class="jf-description">
+															<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut laboreat dolore magna aliqua enim ad coaido consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+														</div>
+														<div class="jf-btns">
+															<a href="employersdetailsans.html" class="jf-btn">Submit Your Answer</a>
+															<a href="employersdetailsans.html">View All Answers</a>
+															<span class="jf-reportbar"><i class="lnr lnr-bug"></i><a href="javascript:void(0);">Report Question</a></span>
+														</div>
+													</div>
+													<div class="jf-interviewprocess">
+														<div class="jf-title">
+															<h2>
+																<a href="javascript:void(0);">Do you get paid during training?</a>
+															</h2>
+															<span>June 27, 2019</span>
+														</div>
+														<div class="jf-description">
+															<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut laboreat dolore magna aliqua enim ad coaido consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+														</div>
+														<div class="jf-btns">
+															<a href="javascript:void(0);" class="jf-btn">Submit Your Answer</a>
+															<a href="javascript:void(0);">View All Answers</a>
+															<span class="jf-reportbar"><i class="lnr lnr-bug"></i><a href="javascript:void(0);">Report Question</a></span>
+														</div>
+													</div>
+													<div class="jf-interviewprocess">
+														<div class="jf-title">
+															<h2>
+																<a href="javascript:void(0);">Is it worth it ? Specifically, Job tasks &amp; paycheque?</a>
+															</h2>
+															<span>June 27, 2019</span>
+														</div>
+														<div class="jf-description">
+															<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut laboreat dolore magna aliqua enim ad coaido consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+														</div>
+														<div class="jf-btns">
+															<a href="javascript:void(0);" class="jf-btn">Submit Your Answer</a>
+															<a href="javascript:void(0);">View All Answers</a>
+															<span class="jf-reportbar"><i class="lnr lnr-bug"></i><a href="javascript:void(0);">Report Question</a></span>
+														</div>
+													</div>
+													<div class="jf-interviewprocess">
+														<div class="jf-title">
+															<h2>
+																<a href="javascript:void(0);">When do they get paid weekly basis or bi-weekly?</a>
+															</h2>
+															<span>June 27, 2019</span>
+														</div>
+														<div class="jf-description">
+															<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut laboreat dolore magna aliqua enim ad coaido consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+														</div>
+														<div class="jf-btns">
+															<a href="javascript:void(0);" class="jf-btn">Submit Your Answer</a>
+															<a href="javascript:void(0);">View All Answers</a>
+															<span class="jf-reportbar"><i class="lnr lnr-bug"></i><a href="javascript:void(0);">Report Question</a></span>
+														</div>
+													</div>
+													<div class="jf-interviewprocess">
+														<div class="jf-title">
+															<h2>
+																<a href="javascript:void(0);">What is the minimum wage how much fo you get paid an hour?</a>
+															</h2>
+															<span>June 27, 2019</span>
+														</div>
+														<div class="jf-description">
+															<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut laboreat dolore magna aliqua enim ad coaido consequat duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+														</div>
+														<div class="jf-btns">
+															<a href="javascript:void(0);" class="jf-btn">Submit Your Answer</a>
+															<a href="javascript:void(0);">View All Answers</a>
+															<span class="jf-reportbar"><i class="lnr lnr-bug"></i><a href="javascript:void(0);">Report Question</a></span>
+														</div>
+													</div>
+													<div class="jf-interviewprocess">
+														<nav class="jf-pagination">
+															<ul>
+																<li class="jf-prevpage"><a href="javascript:void(0);"><i class="fa fa-angle-left"></i> Previous</a></li>
+																<li class="jf-active"><a href="#">01</a></li>
+																<li><a href="javascript:void(0);">02</a></li>
+																<li><a href="javascript:void(0);">03</a></li>
+																<li><a href="javascript:void(0);">04</a></li>
+																<li><a href="javascript:void(0);">05</a></li>
+																<li><a href="javascript:void(0);"></a></li>
+																<li class="jf-nextpage"><a href="javascript:void(0);">Next <i class="fa fa-angle-right"></i></a></li>
+															</ul>
+														</nav>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="jf-jobdetails jf-ourlocation em-tabpane tab-pane fade" id="contact">
+											<div class="jf-jobdetaildescription">
+												<div class="jf-title">
+													<h2>Our Locations</h2>
+												</div>
+												<div class="jf-ourlocations">
+													<div class="row">
+														<div class="col-12 col-sm-12 col-md-6 col-lg-4 float-left">
+															<div class="jf-locationdetails">
+																<div id="jf-thememap" class="jf-thememap"></div>
+																<div class="jf-locationcontant">
+																	<div class="jf-title">
+																		<h2>VAV of Oceans, Chicago</h2>
+																		<span>Office 33 - 37, 27 New Colmore Row Chicago, USA</span>
+																	</div>
+																	<ul class="jf-direction">
+																		<li><a href="javascript:void(0);">Get Directions</a></li>
+																		<li><a href="javascript:void(0);">Share Location</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-sm-12 col-md-6 col-lg-4 float-left">
+															<div class="jf-locationdetails">
+																<div id="jf-thememapvtwo" class="jf-thememap"></div>
+																<div class="jf-locationcontant">
+																	<div class="jf-title">
+																		<h2>VAV of Oceans, Chicago</h2>
+																		<span>Office 33 - 37, 27 New Colmore Row Chicago, USA</span>
+																	</div>
+																	<ul class="jf-direction">
+																		<li><a href="javascript:void(0);">Get Directions</a></li>
+																		<li><a href="javascript:void(0);">Share Location</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+														<div class="col-12 col-sm-12 col-md-6 col-lg-4 float-left">
+															<div class="jf-locationdetails">
+																<div id="jf-thememapvthree" class="jf-thememap"></div>
+																<div class="jf-locationcontant">
+																	<div class="jf-title">
+																		<h2>VAV of Oceans, Chicago</h2>
+																		<span>Office 33 - 37, 27 New Colmore Row Chicago, USA</span>
+																	</div>
+																	<ul class="jf-direction">
+																		<li><a href="javascript:void(0);">Get Directions</a></li>
+																		<li><a href="javascript:void(0);">Share Location</a></li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="jf-contactformarea">
+													<div class="jf-title">
+														<h2>Contact Us</h2>
+													</div>
+													<form class="jf-formtheme jf-formcontactus">
+														<fieldset>
+															<div class="form-group jf-inputwithicon">
+																<i class="lnr lnr-user"></i>
+																<input type="text" name="fullname" class="form-control" placeholder="Full Name">
+															</div>
+															<div class="form-group jf-inputwithicon">
+																<i class="lnr lnr-envelope"></i>
+																<input type="email" name="emailid" class="form-control" placeholder="Email ID">
+															</div>
+															<div class="form-group jf-inputwithicon">
+																<i class="lnr lnr-tag"></i>
+																<input type="text" name="phone" class="form-control" placeholder="Phone">
+															</div>
+															<div class="form-group jf-inputwithicon">
+																<i class="lnr lnr-apartment"></i>
+																<input type="text" name="subject" class="form-control" placeholder="Subject">
+															</div>
+															<div class="form-group jf-inputwithicon">
+																<i class="lnr lnr-bubble"></i>
+																<textarea name="message" class="form-control" placeholder="Message"></textarea>
+															</div>
+															<div class="form-group">
+																<button class="jf-btn jf-active" type="button">Submit</button>
+															</div>
+														</fieldset>
+													</form>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 float-left">
+								<aside id="jf-sidebar" class="jf-sidebar jf-sidebarvtwo">
+									<div class="jf-widget jf-myrecentrearches">
+										<div class="jf-widgettitle">
+											<h3>My Recent Searches</h3>
+										</div>
+										<ul class="jf-recentsearches">
+											<li><a href="javascript:void(0);">php developer</a></li>
+											<li><a href="javascript:void(0);">sale associate</a></li>
+											<li><a href="javascript:void(0);">Graphic Designer</a></li>
+											<li><a href="javascript:void(0);">Graphic Designer</a></li>
+											<li><a href="javascript:void(0);">Graphic Designer</a></li>
+											<li><a href="javascript:void(0);" class="jf-clearsearches"><span class="lnr lnr-cross"></span>Clear Searches</a></li>
+										</ul>
+									</div>
+									<div class="jf-widget jf-employerweek">
+										<div class="jf-widgettitle">
+											<h3>Employer Of The Week</h3>
+										</div>
+										<div class="jf-angrycreative">
+											<span class="fab fa-angrycreative"></span>
+										</div>
+										<div class="jf-employerdetails">
+											<h3>Angry Creative Bears</h3>
+											<h4><span>Member Since: Jun 27, 2010</span><span><i class="lnr lnr-eye"></i>1,744,588 views</span></h4>
+											<ul class="jf-employerjobs">
+												<li><a href="javascript:void(0);">Open Jobs</a></li>
+												<li><a href="javascript:void(0);">Reviews</a></li>
+												<li><a href="javascript:void(0);">Q &amp; A</a></li>
+											</ul>
+											<a href="javascript:void(0);" class="jf-btn">View Full Profile</a>
+										</div>
+									</div>
+									<div class="jf-adds jf-jobsearchadd">
+							   			<a href="javascript:void(0);" title="">
+											<figure>	
+												<img src="{% static 'assets-jobforest/images/adds-02.jpg' %}" alt="img description">
+											</figure>
+										</a>
+										<span>Advertisement  540px X 80px</span>
+									</div>
+								</aside>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--************************************
+					Blog Grid End
+			*************************************-->
+{% endblock content %}

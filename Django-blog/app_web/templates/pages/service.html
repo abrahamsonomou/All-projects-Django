@@ -1,0 +1,75 @@
+{% extends 'includes/_base_client.html' %}
+{% load static %}
+{% block title %}services{% endblock title %}
+{% block titre %}Services{% endblock titre %}
+{% block titre1 %}Services{% endblock titre1 %}
+{% block back %}url('{% static 'assets-client/img/services-header.jpg' %}'){% endblock back %}
+{% block content %}
+      <!-- ======= Services Cards Section ======= -->
+      <section id="services-cards" class="services-cards">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row gy-4">
+  
+            {% for service in list_services %}
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-item">
+                <div class="row">
+                  <div class="col-xl-5">
+                    <div class="card-bg" style="background-image: url({{service.image.url}})"></div>
+                  </div>
+                  <div class="col-xl-7 d-flex align-items-center">
+                    <div class="card-body">
+                      <h4 class="card-title">{{service.titre}}</h4>
+                      <p>{{service.description}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- End Card Item -->
+            {% endfor %}
+  
+          </div>
+  
+        </div>
+      </section><!-- End Services Cards Section -->
+  
+      <!-- ======= Testimonials Section ======= -->
+      <section id="testimonials" class="testimonials">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>Testimonials</h2>
+  
+          </div>
+  
+          <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
+            <div class="swiper-wrapper">
+  
+            {% for temoingnage in list_temoingnages %}
+
+              <div class="swiper-slide">
+                <div class="testimonial-item">
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    {{temoingnage.contenu}}
+                  </p>
+                  <div class="profile mt-auto">
+                    <img src="{{temoingnage.photo.url}}" class="testimonial-img" alt="">
+                    <h3>{{temoingnage.fullname}}</h3>
+                    <h4>{{temoingnage.specialite}}</h4>
+                  </div>
+                </div>
+              </div><!-- End testimonial item -->
+              {% endfor %}
+  
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+  
+        </div>
+      </section><!-- End Testimonials Section -->
+  
+{% endblock content %}

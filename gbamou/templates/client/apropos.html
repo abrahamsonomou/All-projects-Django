@@ -1,0 +1,83 @@
+{% load static %}
+
+     <!-- ==================== aboutme-section start ==================== -->
+     <div data-scroll='1' class="aboutme-section sec-p100-bg-bs mb-30 clearfix" id="about">
+        <div class="Section-title">
+            <h2>
+                <i class="fa fa-user-o" aria-hidden="true"></i>
+                A propos
+            </h2>
+            <span>A propos</span>
+        {% for info in infos %}  
+            <p>
+                {% if info.apropos %}
+                {{info.apropos.html|safe}}
+                {% endif %}
+            </p>
+            </div>
+            <!-- /.Section-title -->
+
+            <div class="personal-details-area">
+                <div class="row">
+                    <div class="col l6 m12 s12">
+                        <div class="personal-details-right">
+                            <h2 class="title">personal details</h2>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td class="td-w65">Nom complet</td>
+                                        <td class="td-w10">:</td>
+                                        <td class="td-w65">{{info.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-w65">Addresse</td>
+                                        <td class="td-w10">:</td>
+                                        <td class="td-w65">{{info.address}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-w65">Niveau d'etude</td>
+                                        <td class="td-w10">:</td>
+                                        <td class="td-w65">{{info.grade}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-w65">Telephone</td>
+                                        <td class="td-w10">:</td>
+                                        <td class="td-w65">{{info.phone}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="td-w65">Email</td>
+                                        <td class="td-w10">:</td>
+                                        <td class="td-w65">{{info.email}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.personal-details-right -->
+                    </div>
+                    <!-- colm6 -->
+                </div>
+                <!-- row -->
+            </div>
+            <!-- /.personal-details-area -->
+
+        {% endfor %}
+
+        {% comment %} <div class="success">
+            <div class="success-child-left">
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+                <p>
+                    Over Ten Year In The Game With 650+ Projects Successfuly Done!
+                </p>
+            </div>
+            <!-- /.success-child-left -->
+            <div class="success-child-right">
+                <a href="#!" class="hire-me waves-effect">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i> hire me
+                </a>
+            </div>
+            <!-- /.success-child-right -->
+        </div>
+        <!-- /.success --> {% endcomment %}
+    </div>
+    <!-- /.aboutme-section -->
+    <!-- ==================== aboutme-section end ==================== -->

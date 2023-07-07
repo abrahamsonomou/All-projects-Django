@@ -1,0 +1,508 @@
+{% extends 'includes/_BaseMain.html' %}
+{% load static %}
+{% block title %}Acceuil | SONOMOU.TECH{% endblock title %}
+{% block content %}
+<div class="breadcrumbs_area">
+    <div class="container">   
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <ul>
+                        <li><a href="{% url 'index' %}">Acceuil</a></li>
+                        {% comment %} <li>All blog</li> {% endcomment %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>         
+</div>
+    {% comment %} <!--slider area start--> {% endcomment %}
+    {% comment %} <section class="slider_section d-flex align-items-center" data-bgimg="">
+        <div class="slider_area owl-carousel">
+            {% for slider in list_sliders %}
+            <div class="single_slider d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6">
+                            <div class="slider_content">
+                                <h1>{{slider.titre}}</h1>
+                                <!-- <h2>Insane Quality for use</h2> -->
+                                <p style="text-transform: none;">{{slider.contenu}}</p>
+                                <a class="button" href="{% url 'blog'%}">Commencez-maintenant!</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="slider_content">
+                                {% if slider.photo %}
+                                <img src="{{slider.photo.url}}" alt="">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            {% endfor %}
+            
+        </div>
+    </section> {% endcomment %}
+    <!--slider area end-->
+
+    <!--Tranding product-->
+    <!-- <section class="pt-60 pb-30 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section-title">
+                        <h2>Tranding Products</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-tranding">
+                        <a href="product-details.html">
+                            <div class="tranding-pro-img">
+                                <img src="{% static 'assets-main/img/product/tranding-1.jpg' %}" alt="">
+                            </div>
+                            <div class="tranding-pro-title">
+                                <h3>Meyoji Robast Drone</h3>
+                                <h4>Drone</h4>
+                            </div>
+                            <div class="tranding-pro-price">
+                                <div class="price_box">
+                                    <span class="current_price">$70.00</span>
+                                    <span class="old_price">$80.00</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-tranding">
+                        <a href="product-details.html">
+                            <div class="tranding-pro-img">
+                                <img src="{% static 'assets-main/img/product/tranding-2.jpg' %}" alt="">
+                            </div>
+                            <div class="tranding-pro-title">
+                                <h3>Ut praesentium earum</h3>
+                                <h4>Mevrik</h4>
+                            </div>
+                            <div class="tranding-pro-price">
+                                <div class="price_box">
+                                    <span class="current_price">$70.00</span>
+                                    <span class="old_price">$80.00</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-tranding">
+                        <a href="product-details.html">
+                            <div class="tranding-pro-img">
+                                <img src="{% static 'assets-main/img/product/tranding-3.jpg' %}" alt="">
+                            </div>
+                            <div class="tranding-pro-title">
+                                <h3>Consectetur adipisicing</h3>
+                                <h4>Flyer</h4>
+                            </div>
+                            <div class="tranding-pro-price">
+                                <div class="price_box">
+                                    <span class="current_price">$70.00</span>
+                                    <span class="old_price">$80.00</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--Tranding product-->
+
+    <!--Features area-->
+    <!-- <section class="features-area pt-60 pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section-title">
+                        <h2>Awesome Features</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-features">
+                        <img src="{% static 'assets-main/img/icon/1.png' %}" alt="">
+                        <h3>Impressive Distance</h3>
+                        <p>consectetur adipisicing elit. Ut praesentium earum, blanditiis, voluptatem repellendus rerum voluptatibus dignissimos</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-features">
+                        <img src="{% static 'assets-main/img/icon/2.png' %}" alt="">
+                        <h3>100% self safe</h3>
+                        <p>consectetur adipisicing elit. Ut praesentium earum, blanditiis, voluptatem repellendus rerum voluptatibus dignissimos</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-features">
+                        <img src="{% static 'assets-main/img/icon/3.png' %}" alt="">
+                        <h3>Awesome Support</h3>
+                        <p>consectetur adipisicing elit. Ut praesentium earum, blanditiis, voluptatem repellendus rerum voluptatibus dignissimos</p>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                    <a href="#"><img src="{% static 'assets-main/img/product/2.png' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--Features area-->
+
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-12 col-lg-12 col-md-12"> 
+                <!--faq area start-->
+                <div class="faq_content_area">
+                    <div class="container">   
+                        <div class="row justify-content-center">
+                            <div class="col-xl-12 col-lg-12 col-md-12">
+                                <div class="faq_content_wrapper">
+                                    <h3>Bienvenue à SONOMOU.TECH </h3>
+                                    <p>Voici nos formations que nous vous proposons</p>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>    
+                </div>
+                <!--Accordion area-->
+                <div class="accordion_area">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                        <div class="col-xl-12 col-lg-12 col-md-12"> 
+                            <div id="accordion" class="card__accordion">
+                            <div class="card card_dipult">
+                                <div class="card-header card_accor" id="headingOne">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Programmation
+
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>La programmation, aussi appelée développement informatique, est un métier de l’informatique en constante évolution au vu des avancées technologiques permanentes.
+                                        La formation en programmation a pour objectif global de former des développeurs web maîtrisant le développement sur le serveur et sur le client.
+                                        </p>
+                                        <h4 style="text-decoration: underline;"><strong>Objectifs</strong></h4>
+                                   <p>Former des spécialistes du développement web, maîtrisant les langages de programmation et les technologies en vigueur: la programmation back-end, la programmation front-end, et les bases de données</p>
+                                  
+                                   <h4 style="text-decoration: underline;"><strong>Les compétences acquises</strong></h4>
+                                   <ul>
+                                        <li>Conception de sites Web; </li>
+                                        <li>Développement d’applications Web & Mobiles;</li>
+                                        <li>Programmation Python; </li>
+                                        <li>Maitrise des technologies du web (HTML/CSS, Javascript, référencement); </li>
+                                        <li>Maitrise du développement d’applications Web et Mobiles; </li>
+                                        <li>Conception et administration de bases de données;  </li>
+                                        <li>Réaliser les programmes pour la partie visible du site web (développeur web front-end ou intégrateur) </li>
+                                        <li>Produire des maquettes graphiques en respectant le prototypage et l’identité visuelle du client (ils pourront devenir web designer). </li>
+                                    </ul>
+                                   <h4 style="text-decoration: underline;"><strong>Débouchés</strong></h4>
+                                   <ul>
+                                    <li>Développeur web front-end et back-end </li>
+                                    <li>Développeur d'applications mobiles </li>
+                                    <li>Développeur e-commerce </li>
+                                    <li>Webdesigner</li>
+                                    <li>Administrateur de base de données</li>
+                                   </ul>
+                                   <h4 style="text-decoration: underline;"><strong>Cours de certifications professionnelles intégrées</strong></h4>
+                                   <ul>
+                                    <li>OCA: Oracle Certified Associate Java</li>
+                                    <li>OCP, MySQL 8.0 DA</li>
+                                   </ul>
+                                   <h4 style="text-decoration: underline;"><strong>Coût de la formation </strong></h4>
+                                    <ul>
+                                        <li>1 500 000F CFA</li>
+                                    </ul>
+                                    <!-- <a href="#" class="btn btn-primmary">S'inscrire</a> -->
+                                </div>
+                                </div>
+                            </div>
+                            <div class="card  card_dipult">
+                                <div class="card-header card_accor" id="headingTwo">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Réseaux, Systèmes & Sécurité
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+
+                                    </button>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                <div class="card-body">
+                                    <h4 style="text-decoration: underline;"><strong>Objectifs</strong></h4>
+                        <p>La formation en Réseaux, Systèmes & Sécurité offre une formation technique dans les domaines de compétences tels que:</p>
+                        <ul>
+                             <li>L’administration et la sécurité des réseaux locaux</li>
+                             <li>Le déploiement et l’administration des systèmes Windows et linux</li>
+                         </ul>
+                         <h4 style="text-decoration: underline;"><strong>Compétences acquises</strong></h4>
+                         <p>La formation en Réseaux, Systèmes & Sécurité forme des spécialistes capables de:</p>
+                         <ul>
+                              <li>Développer et d’administrer différents types de réseaux informatiques</li>
+                              <li>Mettre en place et administrer un réseau d’ordinateurs.</li>
+                              <li>Mettre en œuvre, gérer et récupérer des données informatiques,</li>
+                              <li>Mettre en œuvre et contrôler une politique de sécurité dans l’entreprise,</li>
+                          </ul>
+                          <h4 style="text-decoration: underline;"><strong>Cours de certifications professionnelles offerts dans le programme:</strong></h4>
+                          <ul>
+                               <li>Linux Essentiel</li>
+                               <li>CCNA (Exam : 200-301 CCNA)</li>
+                           </ul>
+                           <h4 style="text-decoration: underline;"><strong>Débouchés</strong></h4>
+                          <ul>
+                               <li>Architecte réseau - Ingénieur Réseaux & Télécoms</li>
+                               <li>Administrateur Système (Windows Server, Linux, etc.)</li>
+                               <li>Administrateur réseau</li>
+                           </ul>
+                           <h4 style="text-decoration: underline;"><strong>Coût de la formation </strong></h4>
+                          <ul>
+                               <li>1 500 000F CFA</li>
+                           </ul>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- <div class="card  card_dipult">
+                                <div class="card-header card_accor" id="headingThree">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Hampden-Sydney College in Virginia, looked up?
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="card  card_dipult">
+                                <div class="card-header card_accor" id="headingfour">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
+                                    The standard chunk of Lorem Ipsum used?
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div id="collapseeight" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="card  card_dipult">
+                                <div class="card-header card_accor" id="headingfive">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                                    All the Lorem Ipsum generators on the Internet?
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div id="collapseseven" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model</p>
+                                </div>
+                                </div>
+                            </div>
+
+                            <div class="card  card_dipult">
+                                <div class="card-header card_accor" id="headingsix">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                                    College in Virginia, looked up one of the more?
+                                    <i class="fa fa-plus"></i>
+                                    <i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <div id="collapsefour" class="collapse" aria-labelledby="headingsix" data-parent="#accordion">
+                                <div class="card-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model</p>
+                                </div>
+                                </div>
+                            </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <!--Accordion area end-->
+                <!--faq area end-->
+            </div>
+
+        </div>
+    </div>
+        
+
+    <!--Other product-->
+    <!-- <section class="pt-60 pb-30">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section-title">
+                        <h2>Other collections</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-tranding mb-30">
+                        <a href="product-details.html">
+                            <div class="tranding-pro-img">
+                                <img src="{% static 'assets-main/img/product/tranding-1.jpg' %}" alt="">
+                            </div>
+                            <div class="tranding-pro-title">
+                                <h3>Meyoji Robast Drone</h3>
+                                <h4>Drone</h4>
+                            </div>
+                            <div class="tranding-pro-price">
+                                <div class="price_box">
+                                    <span class="current_price">$70.00</span>
+                                    <span class="old_price">$80.00</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-tranding mb-30">
+                        <a href="product-details.html">
+                            <div class="tranding-pro-img">
+                                <img src="{% static 'assets-main/img/product/tranding-2.jpg' %}" alt="">
+                            </div>
+                            <div class="tranding-pro-title">
+                                <h3>Ut praesentium earum</h3>
+                                <h4>Mevrik</h4>
+                            </div>
+                            <div class="tranding-pro-price">
+                                <div class="price_box">
+                                    <span class="current_price">$70.00</span>
+                                    <span class="old_price">$80.00</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12">
+                    <div class="single-tranding mb-30">
+                        <a href="product-details.html">
+                            <div class="tranding-pro-img">
+                                <img src="{% static 'assets-main/img/product/tranding-3.jpg' %}" alt="">
+                            </div>
+                            <div class="tranding-pro-title">
+                                <h3>Consectetur adipisicing</h3>
+                                <h4>Flyer</h4>
+                            </div>
+                            <div class="tranding-pro-price">
+                                <div class="price_box">
+                                    <span class="current_price">$70.00</span>
+                                    <span class="old_price">$80.00</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!--Other product-->
+<br>
+    <!--Testimonials-->
+    {% comment %} {%  if list_temoingnages|length %}
+    
+    <section class="pb-60 pt-60 gray-bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10">
+                    <div class="testimonial_are">
+                        <div class="testimonial_active owl-carousel">  
+                             
+                            {% for temoingnage in list_temoingnages %}
+                            <article class="single_testimonial">
+                                <figure>
+                                    <div class="testimonial_thumb">
+                                        {% if temoingnage.photo %}
+                                        <a href="#"><img src="{{temoingnage.photo.url}}" alt=""></a>
+                                        {% else %}
+                                        <a href="#"><img src="{% static 'assets-main/img/default-avatar.png' %}" alt=""></a>
+                                        {% endif %}
+                                    </div>
+                                    <figcaption class="testimonial_content">
+                                        <p>{{temoingnage.contenu}}</p>
+                                        <h3><a href="#">{{temoingnage.fullname}}</a><span> - {{temoingnage.specialite}}</span></h3>
+                                    </figcaption>
+                                    
+                                </figure>
+                            </article> 
+                            {% endfor %}
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+     {% endcomment %}
+    <!--/Testimonials-->
+
+    <!--Blog-->
+    {% if articles|length %}
+    <section class="pt-60">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <div class="section-title">
+                        <h2>Blog Posts</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row blog_wrapper">
+                {% for article in articles %}
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <article class="single_blog mb-60">
+                        <figure>
+                            <div class="blog_thumb">
+                                {% if article.image  %}
+                                <a href="{% url 'detail_article' article.pk %}"><img src="{{article.image.url}}" alt="{{article.titre|truncatechars:30}}"></a>
+                                {% endif %}
+                            </div>
+                            <figcaption class="blog_content">
+                                <h3><a href="{% url 'detail_article' article.pk %}">{{article.titre|truncatechars:30}}</a></h3>
+                                <div class="blog_meta">
+                                    <span class="author">Categorie: <a href="{% url 'detail_article' article.pk %}">{{article.categorie}}</a> / </span>
+                                    <span class="author">Publié par : <a href="{% url 'detail_article' article.pk %}">{{article.auteur}}</a> / </span>
+                                    <span class="post_date"> il y a : <a href="{% url 'detail_article' article.pk %}">{{article.updated|timesince|truncatechars:30}}</a></span>
+                                </div>
+                                <div class="blog_desc">
+                                    <p>{{article.resume|truncatechars:100}}</p>
+                                </div>
+                                <footer class="readmore_button">
+                                    <a href="{% url 'detail_article' article.pk %}">lire plus</a>
+                                </footer>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+    <!--/Blog-->
+    
+    {% endblock content %}

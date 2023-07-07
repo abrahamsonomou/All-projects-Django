@@ -1,0 +1,390 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>GBAMOU Dieu Donné | Portfolio</title>
+
+    <!-- css include -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/materialize.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/font-awesome.min.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/owl.carousel.min.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/owl.theme.default.min.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/animate.css' %} ">
+
+    <!-- my css include -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/reset.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/style.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets-client-portfolio/css/responsive.css' %} ">
+
+</head>
+
+<body class="clearfix">
+
+    <div data-scroll='0' class="thetop"></div>
+    <!-- for back to top -->
+
+    {% if infos %}
+    <!-- ========== ========== fixed - left side body start ========== ========== -->
+    {% for info in infos %}
+    <div class="fixed-left-side-body">
+        <div class="profile">
+            <div class="profile-image center-align">
+            {% if info.photo %}
+            <img class="w-100 img-fluid mb-4" src="{{info.photo.url}}" alt="Image">
+            {% else %}
+            <img class="w-100 img-fluid mb-4" src="{% static 'assets-gbamou/img/profile.jpg' %}" alt="Image">
+            {% endif %}
+                {% comment %} <img src="{% static 'assets-client-portfolio/images/akshay2.png' %} " alt="Image"> {% endcomment %}
+            </div>
+            <!-- /.profile-image -->
+
+            <div class="profile-name center-align">
+                <h1 class="user-name">{{info.nom}}</h1>
+                <p>
+                    <span class="photoshop-color">{{info.specialite}}</span>
+                </p>
+            </div>
+            <!-- /.profile-name -->
+
+            <ul class="social-btn">
+                <li>
+                    <a href="{% if info.facebook %} {{info.facebook}} {% else %} #!{% endif %}">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% if info.twitter %} {{info.twitter}} {% else %} #!{% endif %}">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% if info.instagram %} {{info.instagram}} {% else %} #!{% endif %}">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% if info.linkedin %} {{info.linkedin}} {% else %} #!{% endif %}">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{% if info.youtube %} {{info.youtube}} {% else %} #!{% endif %}">
+                        <i class="fa fa-youtube" aria-hidden="true"></i>
+                    </a>
+                </li>
+            </ul>
+
+            {% comment %} <div class="discription clearfix">
+                <h2 class="title mb-30">what's in my mind</h2>
+                <p>
+                    We can develop and design anything beyond your ima gination. About our work, we don’t say anything bec ause our work speaks. For more, you can ask our clie nts and they will tell you how much satisfied they are with our services. So, what are you waiting for?
+                </p>
+            </div> {% endcomment %}
+            <!-- /.discription -->
+            <div class="cv-btn">
+                {% if info.cv %}
+                    <a href="{{info.cv.url}}" class="custom-btn waves-effect waves-light">
+                    <i class="fa fa-download" aria-hidden="true"></i> download cv
+                    </a>
+
+                    {% else %}
+                    <a href="#!" class="custom-btn waves-effect waves-light">
+                        <i class="fa fa-download" aria-hidden="true"></i> download cv
+                        </a>
+                {% endif %}
+                </a>
+            </div>
+        </div>
+        <!-- /.profile -->
+    </div>
+    {% endfor %}
+
+    <!-- /.fixed-left-side-body -->
+    <!-- ========== ========== fixed - left side body end ========== ========== -->
+    {% endif %}
+    <!-- ========== ========== right side body start ========== ========== -->
+    <div class="right-side-body">
+
+            {% include 'client/header-section.html' %}
+
+            {% if infos %}
+
+            {% include 'client/acceuil.html' %}
+
+            {% include 'client/apropos.html' %}
+
+            {% include 'client/skils.html' %}
+
+
+        {% comment %} <!-- ==================== testomonials-section start ==================== -->
+        <div data-scroll='5' class="testomonials-section sec-p100-bg-bs mb-30 clearfix" id="testimonial">
+
+            <div class="Section-title">
+                <h2>
+					<i class="fa fa-quote-left" aria-hidden="true"></i>
+					testomonials
+				</h2>
+                <span>testomonials</span>
+                <p>
+                    Proin gravida nibh vel velit quet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulpuate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.
+                </p>
+            </div>
+            <!-- /.Section-title -->
+            <div class="hello_testi_slider_wrapper">
+                <div id="testomonial-carousel" class="owl-carousel owl-theme">
+                    <div class="item">
+
+                        <div class="testomonial-img">
+                            <img src="{% static 'assets-client-portfolio/images/testomonial/testomonial-img1.jpg' %} " alt="Image">
+                        </div>
+                        <!-- /.testomonial-img -->
+
+                        <div class="testomonial-contant">
+                            <h2>
+								Collis Ta'eed <span>(CEO at ABC)</span>
+							</h2>
+                            <p>
+                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                            </p>
+                            <a href="#" class="common-color">https:example.com</a>
+                        </div>
+
+                        <!-- /.testomonial-contant -->
+                    </div>
+                    <!-- /.item -->
+
+                    <div class="item">
+                        <div class="testomonial-img">
+                            <img src="{% static 'assets-client-portfolio/images/testomonial/testomonial-img2.jpg' %} " alt="Image">
+                        </div>
+                        <!-- /.testomonial-img -->
+
+                        <div class="testomonial-contant">
+                            <h2>
+							Collis Ta'eed <span>(CEO at ABC)</span>
+						</h2>
+                            <p>
+                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                            </p>
+                            <a href="#" class="common-color">https:example.com</a>
+                        </div>
+                        <!-- /.testomonial-contant -->
+                    </div>
+                    <!-- /.item -->
+
+                    <div class="item">
+                        <div class="testomonial-img">
+                            <img src="{% static 'assets-client-portfolio/images/testomonial/testomonial-img3.jpg' %} " alt="Image">
+                        </div>
+                        <!-- /.testomonial-img -->
+
+                        <div class="testomonial-contant">
+                            <h2>
+							Collis Ta'eed <span>(CEO at ABC)</span>
+						</h2>
+                            <p>
+                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                            </p>
+                            <a href="#" class="common-color">https:example.com</a>
+                        </div>
+                        <!-- /.testomonial-contant -->
+                    </div>
+                    <!-- /.item -->
+
+                    <div class="item">
+                        <div class="testomonial-img">
+                            <img src="{% static 'assets-client-portfolio/images/testomonial/testomonial-img4.jpg' %} " alt="Image">
+                        </div>
+                        <!-- /.testomonial-img -->
+
+                        <div class="testomonial-contant">
+                            <h2>
+							Collis Ta'eed <span>(CEO at ABC)</span>
+						</h2>
+                            <p>
+                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                            </p>
+                            <a href="#" class="common-color">https:example.com</a>
+                        </div>
+                        <!-- /.testomonial-contant -->
+                    </div>
+                    <!-- /.item -->
+
+                    <div class="item">
+                        <div class="testomonial-img">
+                            <img src="{% static 'assets-client-portfolio/images/testomonial/testomonial-img5.jpg' %} " alt="Image">
+                        </div>
+                        <!-- /.testomonial-img -->
+
+                        <div class="testomonial-contant">
+                            <h2>
+							Collis Ta'eed <span>(CEO at ABC)</span>
+						</h2>
+                            <p>
+                                Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                            </p>
+                            <a href="#" class="common-color">https:example.com</a>
+                        </div>
+                        <!-- /.testomonial-contant -->
+                    </div>
+                    <!-- /.item -->
+                </div>
+            </div>
+            <!-- /#testomonial-carousel -->
+
+        </div>
+        <!-- /.testomonials-section -->
+        <!-- ==================== testomonials-section end ==================== --> {% endcomment %}
+
+        {% include 'client/experience.html' %}
+
+        {% include 'client/formation.html' %}
+
+        {% include 'client/education.html' %}
+
+        {% comment %} <!-- ==================== contact-me-section start ==================== -->
+        <div data-scroll='8' class="contact-me-section sec-p100-bg-bs mb-30 clearfix" id="contact">
+
+            <div class="Section-title">
+                <h2>
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					contact me
+				</h2>
+                <span>contact me</span>
+                <p>
+                    Proin gravida nibh vel velit quet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulpuate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.
+                </p>
+            </div>
+            <!-- /.Section-title -->
+
+            <div class="row">
+                <div class="col l6 m12 s12">
+                    <div class="contact-left">
+
+                        <div class="cont-item phone">
+                            <h2 class="title mb-30">phone</h2>
+                            <div class="cont-numbers">
+                                <p>
+                                    <span>Mob.</span>+0 123456789
+                                </p>
+                                <p>
+                                    <span>Landline</span>+0 123456789
+                                </p>
+                                <p>
+                                    <span>Skype</span>webstrot
+                                </p>
+                            </div>
+                            <!-- /.cont-numbers -->
+                        </div>
+                        <!-- /.cont-item -->
+
+                        <div class="cont-item email">
+                            <h2 class="title mb-30">email</h2>
+                            <div class="cont-numbers">
+                                <p>support@example.com</p>
+                                <p>support@example.com</p>
+                            </div>
+                            <!-- /.cont-numbers -->
+                        </div>
+                        <!-- /.cont-item -->
+
+                        <div class="cont-item address">
+                            <h2 class="title mb-30">address</h2>
+                            <div class="cont-numbers">
+                                <p>Street 110-B Kalani Bag, Dewas, M.P. INDIA</p>
+                                <p><a href="#" class="photoshop-color">https:example.com</a></p>
+                            </div>
+                            <!-- /.cont-numbers -->
+                        </div>
+                        <!-- /.cont-item -->
+
+                    </div>
+                    <!-- /.contact-left -->
+                </div>
+                <!-- colm6 -->
+
+                <div class="col l6  s12">
+                    <div class="contact-right clearfix">
+
+                        <form action="#">
+
+                            <h2 class="title mb-30">here me</h2>
+
+                            <div class="input-field">
+                                <input type="text" name="full_name" class="require">
+                                <label>First Name</label>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" name="email" class="require" data-valid="email" data-error="Email should be valid.">
+                                <label>Email</label>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" name="subject" class="require">
+                                <label>Subject</label>
+                            </div>
+
+                            <div class="input-field">
+
+                                <textarea rows="7" name="message" class="materialize-textarea"></textarea>
+                                <label>Message</label>
+                                <div class="response"></div>
+                            </div>
+
+                            <button type="button" class="submitForm custom-btn waves-effect"><i class="fa fa-envelope-o" aria-hidden="true"></i>Send</button>
+                        </form>
+
+                    </div>
+                    <!-- /.contact-right -->
+                </div>
+                <!-- colm6 -->
+            </div>
+            <!-- row -->
+
+        </div>
+        <!-- /.contact-me-section -->
+        <!-- ==================== contact-me-section end ==================== --> {% endcomment %}
+
+        {% endif %}
+        <!-- ==================== footer-section start ==================== -->
+        <footer id="footer-section" class="footer-section clearfix">
+            <p <a href="#" class="photoshop-color">Developpé par </a>  <a target="_blank" href="https://www.templateshub.net">sonomou.tech</a></p>
+
+            <div class='backtotop'>
+                <a href="#" class='scroll'>
+                    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+                </a>
+            </div>
+            <!-- backtotop -->
+        </footer>
+        <!-- /.footer-section -->
+        <!-- ==================== footer-section end ==================== -->
+    </div>
+    <!-- ========== ========== right side body end ========== ========== -->
+
+    <!-- jquery and bootstrap.js -->
+    <script src="{% static 'assets-client-portfolio/js/jquery-3.1.1.min.js' %} "></script>
+    <script src="{% static 'assets-client-portfolio/js/materialize.min.js' %} "></script>
+    <script src="{% static 'assets-client-portfolio/js/owl.carousel.min.js' %} "></script>
+    <script src="{% static 'assets-client-portfolio/js/isotope.pkgd.min.js' %} "></script>
+    <script src="{% static 'assets-client-portfolio/js/circle-progress.js' %} "></script>
+
+    <!-- my custom js -->
+    <script src="{% static 'assets-client-portfolio/js/custom.js' %} "></script>
+</body>
+
+
+</html>

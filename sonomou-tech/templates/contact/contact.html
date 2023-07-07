@@ -1,0 +1,87 @@
+{% extends 'includes/_BaseMain.html' %}
+{% load static %}
+{% block content %}
+    <!--breadcrumbs area start-->
+    <div class="breadcrumbs_area">
+        <div class="container">   
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_content">
+                        <ul>
+                            <li><a href="{% url 'index' %}">Acceuil</a></li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>         
+    </div>
+    <!--breadcrumbs area end-->
+
+	<section class="account">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-12">
+					<div class="account-contents" style="background: url('{% static 'assets-main/img/about/about2.jpg '%}'); background-size: cover;">
+                        <div class="row">
+                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                                <div class="account-thumb">
+                                    <h2>Restons connecter</h2>
+                                    <p>Une demande de proposition, une offre ou simplement un renseignement, nous aimons vous lire et nous vous contacterons le plus rapidement possible. Écrivez-nous.</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                                <div class="account-content">
+                                    <form action="" method="POST">
+                                         {% csrf_token %}           
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="single-acc-field">
+                                                    <label for="name">Name</label>
+                                                    {{form.nom}}
+                                                    {% comment %} <input type="text" placeholder="Name" id="name"> {% endcomment %}
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="single-acc-field">
+                                                    <label for="email">Email</label>
+                                                    {{form.email}}
+                                                    {% comment %} <input type="email" placeholder="Email" id="email"> {% endcomment %}
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="single-acc-field">
+                                                    <label for="sujet">Sujet</label>
+                                                    {{form.sujet}}
+                                                    {% comment %} <input type="email" placeholder="Email" id="email"> {% endcomment %}
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="single-acc-field">
+                                                    <label for="msg">Message</label>
+                                                    {{form.message}}
+                                                    {% comment %} <textarea name="msg" id="msg" rows="4"></textarea> {% endcomment %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <!-- <div class="single-acc-field boxes">
+                                            <input type="checkbox" id="checkbox">
+                                            <label for="checkbox">Remember me</label>
+                                        </div> -->
+                                        <div class="single-acc-field">
+                                            <button type="submit">Send Message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}
+    

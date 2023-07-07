@@ -1,0 +1,77 @@
+{% load static %}
+
+    {% comment %} <!-- ======= Contact Section ======= --> {% endcomment %}
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+          {% for info in infos %}
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>{% if info.address %}{{info.address}}{% endif %}</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>{% if info.email %}{{info.email}}{% endif %}</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>{% if info.phone %}{{info.phone}}{% endif %}</p>
+              </div>
+              {% if info.photoc %}
+              <img class="w-100 img-fluid mb-4" src="{{info.photoc.url}}" alt="Image">
+              {% else %}
+              <img class="w-100 img-fluid mb-4" src="{% static 'assets-portfolio/img/profile-img.jpeg' %}" class="img-fluid" alt="">
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          <div class="col-lg-7 d-flex align-items-stretch">
+            <div class="info">
+               <h4 class="text-center mb-3">Contactez-nous !</h4>
+               {% comment %} {% if messages %}
+               {% for message  in messages %}
+               <div {% if message.tags %} class="{{message.tags}}" {% endif %}>
+                   {{message}}
+               </div>
+               {% endfor %}
+               {% endif %}  {% endcomment %}
+               
+            <form method="POST" action="{% url 'contact' %}" class="php-email-form">
+              {% csrf_token %}           
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="nom">Votre nom</label>
+                    {{form.nom}}
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Votre Email</label>
+                    {{form.email}}
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="subject">Subject</label>
+                  {{form.sujet}}
+                </div>
+                <div class="form-group">
+                  <label for="name">Message</label>
+                  {{form.message}}
+                </div>
+                <div class="text-center"><button type="submit">Envoyer</button></div>
+              </form>
+            </div>
+          </div>
+    </div>
+    </div>
+</section><!-- End Contact Section -->

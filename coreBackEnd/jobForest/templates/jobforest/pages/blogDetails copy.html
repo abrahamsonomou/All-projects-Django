@@ -1,0 +1,493 @@
+{% extends 'jobforest/includes/_base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock title %}
+{% block header %}
+		<!--************************************
+				breadcrumbarea start
+		*************************************-->
+		<div class="jf-breadcrumbarea">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<ol class="jf-breadcrumb">
+							<li><a href="{% url 'jobforestHome' %}">Home</a></li>
+							<li class="jf-active">Blog</li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--************************************
+				breadcrumbarea End
+		*************************************-->
+{% endblock header %}
+{% block content %}
+			<!--************************************
+					Blog Detail Start
+			*************************************-->
+			<div class="jf-sectionspace jf-haslayout">
+				<div class="container">
+					<div class="row">
+						<div id="jf-twocolumns" class="jf-twocolumns">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 pull-right">
+								<div id="jf-content" class="jf-content jf-blogdetail">
+									<div class="jf-nextprevposts">
+										<div class="jf-btnprevpost">
+											<a href="javascript:void(0);">
+												<figure>
+													<img src="{% static 'assets-jobforest/images/thumbnail/img-01.jpg' %}" alt="image description">
+												</figure>
+												<div class="jf-posttname">
+													<h3>Dare To Face Chalenges in Life</h3>
+													<span><i class="lnr lnr-arrow-left"></i> Previous Post</span>
+												</div>
+											</a>
+										</div>
+										<div class="jf-btnnextpost">
+											<a href="javascript:void(0);">
+												<figure>
+													<img src="{% static 'assets-jobforest/images/thumbnail/img-02.jpg' %}" alt="image description">
+												</figure>
+												<div class="jf-posttname">
+													<h3>Don’t Fade Out In Crowed</h3>
+													<span>Next Post <i class="lnr lnr-arrow-right"></i></span>
+												</div>
+											</a>
+										</div>
+									</div>
+									<div class="jf-innersectionhead">
+										<div class="jf-title">
+											<h2>Do You Have a Job That The Average Person Doesn’t Even Know Exists?</h2>
+										</div>
+									</div>
+									<ul class="jf-postarticlemetavtwo">
+										<li>
+											<a href="javascript:void(0);">
+												<i class="lnr lnr-calendar-full"></i>
+												<span>June 27, 2019</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);">
+												<i class="lnr lnr-user"></i>
+												<span>Willis Wainright</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);">
+												<i class="lnr lnr-tag"></i>
+												<span>Lifestyle &amp; DIY</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0);">
+												<i class="lnr lnr-bug"></i>
+												<span>Report Post</span>
+											</a>
+										</li>
+									</ul>
+									<figure class="jf-blogdetailimgvtwo">
+										<img src="{% static 'assets-jobforest/images/blogdetail/img-03.jpg' %}" alt="image description">
+									</figure>
+									<div class="jf-description">
+										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed utem perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaqueiu ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dictaed quia consequuntur magni dolores eos quist ratione voluptatem sequei nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sitem amet consectetur adipisci velit sed quianon numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat tatem dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+										<blockquote class="jf-blockquotevone">
+											<span><i class="lnr lnr-bookmark"></i></span>
+											<q>” Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</q>
+										</blockquote>
+										<p>Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiate nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+										<figure class="jf-blogdetailimgvtwo">
+											<img src="{% static 'assets-jobforest/images/blogdetail/img-04.jpg' %}" alt="image description">
+											<figcaption><span>As per current survey perspiciatis unde omnis iste natus error sit voluptatem.</span></figcaption>
+										</figure>
+										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+										<ul>
+											<li><span>Nemo enim ipsam voluptatem quia</span></li>
+											<li><span>Adipisci velit, sed quia non numquam eius modi tempora</span></li>
+											<li><span>Eaque ipsa quae ab illo inventore veritatis et quasi architecto</span></li>
+											<li><span>qui dolorem ipsum quia dolor sit amet</span></li>
+										</ul>
+										<p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+										<blockquote class="jf-blockquotevtwo">
+											<q>” Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”</q>
+										</blockquote>
+										<figure class="jf-blogdetailimgvtwo jf-alignleft">
+											<img src="{% static 'assets-jobforest/images/blogdetail/img-05.jpg' %}" alt="image description">
+											<figcaption><span>As per current survey perspiciatis unde</span></figcaption>
+										</figure>
+										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officiaerunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaqueisa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta suntcabo Nemo enim ipsam voluptatem quia voluptas.</p>
+										<ul class="jf-blogliststyle">
+											<li><span>Nemo enim ipsam voluptatem quia</span></li>
+											<li><span>Adipisci velit, sed quia non numquam eius modi tempora</span></li>
+											<li><span>Eaque ipsa quae ab illo inventore veritatis et quasi architecto</span></li>
+											<li><span>qui dolorem ipsum quia dolor sit amet</span></li>
+										</ul>
+										<p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nenti Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, cteturisci velit, sed quia non numquam eius modi.</p>
+										<p class="jf-clear">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+										<figure class="jf-blogdetailimgvtwo jf-alignright">
+											<img src="{% static 'assets-jobforest/images/blogdetail/img-06.jpg' %}" alt="image description">
+											<figcaption><span>As per current survey perspiciatis unde</span></figcaption>
+										</figure>
+										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officiaerunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaqueisa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta suntcabo Nemo enim ipsam voluptatem quia voluptas.</p>
+										<ul class="jf-blogliststyle">
+											<li><span>Nemo enim ipsam voluptatem quia</span></li>
+											<li><span>Adipisci velit, sed quia non numquam eius modi tempora</span></li>
+											<li><span>Eaque ipsa quae ab illo inventore veritatis et quasi architecto</span></li>
+											<li><span>qui dolorem ipsum quia dolor sit amet</span></li>
+										</ul>
+										<p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nenti Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, cteturisci velit, sed quia non numquam eius modi.</p>
+										<p class="jf-clear">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+										<div class="jf-video">
+											<figure><a data-rel="prettyPhoto[video]" href="https://www.youtube.com/watch?v=J37W6DjqT3Q"><img src="{% static 'assets-jobforest/images/blogdetail/img-07.jpg' %}" alt="image description"></a></figure>
+										</div>
+										<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+										<ul>
+											<li><span>Nemo enim ipsam voluptatem quia</span></li>
+											<li><span>Adipisci velit, sed quia non numquam eius modi tempora</span></li>
+											<li><span>Eaque ipsa quae ab illo inventore veritatis et quasi architecto</span></li>
+											<li><span>qui dolorem ipsum quia dolor sit amet</span></li>
+										</ul>
+										<p>Sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+									</div>
+									<div class="jf-tagsshare">
+										<div class="jf-tag">
+											<span>Tags:</span>
+											<a href="javascript:void(0);">Sales</a>
+											<a href="javascript:void(0);">Tyre</a>
+											<a href="javascript:void(0);">DIY</a>
+											<a href="javascript:void(0);">Medical</a>
+											<a href="javascript:void(0);">Transport</a>
+										</div>
+										<ul class="jf-socialiconssimple jf-blogsocialicons">
+											<li class="jf-sharejob"><span>Share this job</span></li>
+											<li class="jf-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook-f"></i></a></li>
+											<li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
+											<li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+											<li class="jf-clone"><a href="javascript:void(0);"><i class="far fa-clone"></i></a></li>
+										</ul>
+									</div>
+									<div class="jf-author">
+										<div class="jf-authordetails">
+											<figure>
+												<a href="javascript:void(0);"><img src="{% static 'assets-jobforest/images/author/img-01.jpg' %}" alt="image description"></a>
+											</figure>
+											<div class="jf-authorcontent">
+												<div class="jf-authorhead">
+													<div class="jf-boxleft">
+														<h3><a href="javascript:void(0);">Antwan Bosserman</a></h3>
+														<span>Author Since: Jun 27, 2016</span>
+													</div>
+													<div class="jf-boxright">
+														<ul class="jf-socialiconssimple">
+															<li class="jf-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook-f"></i></a></li>
+															<li class="jf-twitter"><a href="javascript:void(0);"><i class="fab fa-twitter"></i></a></li>
+															<li class="jf-linkedin"><a href="javascript:void(0);"><i class="fab fa-linkedin-in"></i></a></li>
+															<li class="jf-googleplus"><a href="javascript:void(0);"><i class="fab fa-google"></i></a></li>
+														</ul>
+													</div>
+												</div>
+												<div class="jf-description">
+													<p>Excepteur sint occaecat cupidatat non proident, sunt inlpa officia deserunt molliteu anim idestrume Sed utaiciatis unde omnis iste natus error sitame voluptatem accusntium dolorem aque laudaiumin totam rem aiam eaque ipsa quae abillointore veritatis et quasi architecto eibeatae vitae dicta suntise explicabo nemo enim ipsam voluptatem quia voluptas.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="jf-comments" class="jf-comments">
+										<h2>03 Comments</h2>
+										<ul>
+											<li>
+												<div class="jf-author">
+													<div class="jf-authordetails">
+														<figure>
+															<a href="javascript:void(0);"><img src="{% static 'assets-jobforest/images/author/img-02.jpg' %}" alt="image description"></a>
+														</figure>
+														<div class="jf-authorcontent">
+															<div class="jf-authorhead">
+																<div class="jf-boxleft">
+																	<h3><a href="javascript:void(0);">Shameka Mccarter</a></h3>
+																	<span>01 Min Ago</span>
+																</div>
+																<div class="jf-boxright">
+																	<a class="jf-btnreply" href="javascript:void(0);"><span class="jf-clickreply">Click To Reply</span><i class="fa fa-mail-reply"></i></a>
+																</div>
+															</div>
+															<div class="jf-description">
+																<p>Excepteur sint occaecat cupidatat non proident, sunt inlpa officia deserunt molliteu animeta idestrume Sed utaiciatis unde omnis iste natus error sitame voluptatem accusntium dolorem aquesim laudaiumin totam rem aiam eaque ipsa quae abillointore veritatis et quasi architecto eibeatae vitae dictaan suntise explicabo nemo enim ipsam voluptatem quia voluptas.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<ul class="jf-child">
+													<li>
+														<div class="jf-author">
+															<div class="jf-authordetails">
+																<figure>
+																	<a href="javascript:void(0);"><img src="{% static 'assets-jobforest/images/author/img-03.jpg' %}" alt="image description"></a>
+																</figure>
+																<div class="jf-authorcontent">
+																	<div class="jf-authorhead">
+																		<div class="jf-boxleft">
+																			<h3><a href="javascript:void(0);">Floyd Miranda</a></h3>
+																			<span>03 Days Ago</span>
+																		</div>
+																		<div class="jf-boxright">
+																			<a class="jf-btnreply" href="javascript:void(0);"><span class="jf-clickreply">Click To Reply</span><i class="fa fa-mail-reply"></i></a>
+																		</div>
+																	</div>
+																	<div class="jf-description">
+																		<p>Excepteur sint occaecat cupidatat non proident, sunt inlpatiume officia deserunt molliteu animeta idestrume Sed utaiciatis unde omnis iste natus error sitame voluptatem accuium dolorem aquesim laudaiumin totam rem aiam.</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<div class="jf-author">
+													<div class="jf-authordetails">
+														<figure>
+															<a href="javascript:void(0);"><img src="{% static 'assets-jobforest/images/author/img-04.jpg' %}" alt="image description"></a>
+														</figure>
+														<div class="jf-authorcontent">
+															<div class="jf-authorhead">
+																<div class="jf-boxleft">
+																	<h3><a href="javascript:void(0);">Joshua Krom</a></h3>
+																	<span>02 Years Ago</span>
+																</div>
+																<div class="jf-boxright">
+																	<a class="jf-btnreply" href="javascript:void(0);"><span class="jf-clickreply">Click To Reply</span><i class="fa fa-mail-reply"></i></a>
+																</div>
+															</div>
+															<div class="jf-description">
+																<p>Excepteur sint occaecat cupidatat non proident, sunt inlpa officia deserunt molliteu animeta idestrume Sed utaiciatis unde omnis iste natus error sitame voluptatem accusntium dolorem aquesim laudaiumin totam rem aiam eaque ipsa quae abillointore veritatis et quasi architecto eibeatae vitae dictaan suntise explicabo nemo enim ipsam voluptatem quia voluptas.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+										<div class="jf-commentsbtn">
+											<button class="jf-btn jf-active" type="button">Load More</button>
+										</div>
+									</div>
+									<div class="jf-replaybox">
+										<h2>Leave Your Comment</h2>
+										<form class="jf-formtheme jf-formleavecomment">
+											<fieldset>
+												<div class="form-group jf-inputwithicon">
+													<i class="lnr lnr-user"></i>
+													<input type="text" name="name" class="form-control" placeholder="Your Name">
+												</div>
+												<div class="form-group jf-inputwithicon">
+													<i class="lnr lnr-envelope"></i>
+													<input type="email" name="email" class="form-control" placeholder="Your Email">
+												</div>
+												<div class="form-group jf-inputwithicon">
+													<i class="lnr lnr-tag"></i>
+													<input type="text" name="subject" class="form-control" placeholder="Subject">
+												</div>
+												<div class="form-group jf-inputwithicon">
+													<i class="lnr lnr-apartment"></i>
+													<input type="text" name="company" class="form-control" placeholder="Company">
+												</div>
+												<div class="form-group jf-inputwithicon">
+													<i class="lnr lnr-bubble"></i>
+													<textarea name="message" class="form-control" placeholder="Your Message"></textarea>
+												</div>
+												<div class="form-group">
+													<button class="jf-btn jf-active" type="submit">submit</button>
+												</div>
+											</fieldset>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 float-left">
+								<aside id="jf-sidebar" class="jf-sidebar">
+									<div class="jf-widget jf-widgetsearch">
+										<div class="jf-widgettitle">
+											<h3>Start Search Here</h3>
+										</div>
+										<div class="jf-widgetcontent">
+											<form class="jf-formtheme">
+												<fieldset>
+													<div class="form-group jf-inputwithicon">
+														<i class="lnr lnr-magnifier"></i>
+														<input type="search" name="search" class="form-control" placeholder="Search Here">
+													</div>
+													<button class="jf-btn" type="button">Search Now</button>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+									<div class="jf-widget jf-categories">
+										<div class="jf-widgettitle">
+											<h3>Categories</h3>
+										</div>
+										<div class="jf-checkboxgroup">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-salesexecutive" name="bycondition" value="Sales Executive">
+												<label for="jf-salesexecutive">
+													<span>Sales Executive</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-graphicdesigner" name="bycondition" value="Graphic Designer" checked="">
+												<label for="jf-graphicdesigner">
+													<span>Graphic Designer</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-marketingexecutive" name="bycondition" value="Marketing Executive">
+												<label for="jf-marketingexecutive">
+													<span>Marketing Executive</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-accountant" name="bycondition" value="Accountant">
+												<label for="jf-accountant">
+													<span>Accountant</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-salesmarketingexecutive" name="bycondition" value="Sales / Marketing Executive">
+												<label for="jf-salesmarketingexecutive">
+													<span>Sales / Marketing Executive</span>
+												</label>
+											</span>
+											<a href="javascript:void(0);" class="jf-viewmore">View More</a>
+										</div>
+									</div>
+									<div class="jf-widget jf-archives">
+										<div class="jf-widgettitle">
+											<h3>Archives</h3>
+										</div>
+										<div class="jf-checkboxgroup">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-april" name="bycondition" value="April 2019">
+												<label for="jf-april">
+													<span>April 2019</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-march" name="bycondition" value="March 2019"  checked="">
+												<label for="jf-march">
+													<span>March 2019</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-february" name="bycondition" value="February 2019">
+												<label for="jf-february">
+													<span>February 2019</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-january" name="bycondition" value="January 2019">
+												<label for="jf-january">
+													<span>January 2019</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-april2019" name="bycondition" value="April 2019">
+												<label for="jf-april2019">
+													<span>April 2019</span>
+												</label>
+											</span>
+											<a href="javascript:void(0);" class="jf-viewmore">View More</a>
+										</div>
+									</div>
+									<div class="jf-widget jf-meta">
+										<div class="jf-widgettitle">
+											<h3>Meta</h3>
+										</div>
+										<div class="jf-checkboxgroup">
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-login" name="bycondition" value="Log in">
+												<label for="jf-login">
+													<span>Log in</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-entriesrss" name="bycondition" value="Entries RSS"  checked="">
+												<label for="jf-entriesrss">
+													<span>Entries RSS</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-commentsrss" name="bycondition" value="Comments RSS">
+												<label for="jf-commentsrss">
+													<span>Comments RSS</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-wordpress" name="bycondition" value="WordPress.org">
+												<label for="jf-wordpress">
+													<span>WordPress.org</span>
+												</label>
+											</span>
+											<span class="jf-checkbox">
+												<input type="checkbox" id="jf-tabtitle" name="bycondition" value="Tab Title 05">
+												<label for="jf-tabtitle">
+													<span>Tab Title 05</span>
+												</label>
+											</span>
+											<a href="javascript:void(0);" class="jf-viewmore">View More</a>
+										</div>
+									</div>
+									<div class="jf-widget jf-recentposts">
+										<div class="jf-widgettitle">
+											<h3>Recent Posts</h3>
+										</div>
+										<div class="jf-recentpost">
+											<div class="jf-recentpostdetails">
+												<figure class="jf-recentpostimg">
+													<img src="{% static 'assets-jobforest/images/thumbnail/img-03.jpg' %}" alt="image description">
+												</figure>
+												<div class="jf-recentpostcontent">
+													<h3>Don’t Fade Out In Crowed</h3>
+													<span><i class="lnr lnr-calendar-full"></i> Jun 27, 2019</span>
+												</div>
+											</div>
+											<div class="jf-recentpostdetails">
+												<figure class="jf-recentpostimg">
+													<img src="{% static 'assets-jobforest/images/thumbnail/img-04.jpg' %}" alt="image description">
+												</figure>
+												<div class="jf-recentpostcontent">
+													<h3>Don’t Fade Out In Crowed</h3>
+													<span><i class="lnr lnr-calendar-full"></i> Jun 27, 2019</span>
+												</div>
+											</div>
+											<div class="jf-recentpostdetails">
+												<figure class="jf-recentpostimg">
+													<img src="{% static 'assets-jobforest/images/thumbnail/img-05.jpg' %}" alt="image description">
+												</figure>
+												<div class="jf-recentpostcontent">
+													<h3>Don’t Fade Out In Crowed</h3>
+													<span><i class="lnr lnr-calendar-full"></i> Jun 27, 2019</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="jf-widget jf-widgettags">
+										<div class="jf-widgettitle">
+											<h3>Tags</h3>
+										</div>
+										<div class="jf-tag">
+											<a href="javascript:void(0);">Sales</a>
+											<a href="javascript:void(0);">Tyre</a>
+											<a href="javascript:void(0);">DIY</a>
+											<a href="javascript:void(0);">Medical</a>
+											<a href="javascript:void(0);">Transport</a>
+										</div>
+									</div>
+								</aside>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--************************************
+					Blog Detail End
+			*************************************-->
+{% endblock content %}

@@ -1,0 +1,53 @@
+{% load static %}
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          {% for info in infos %}
+          {% if portfolio.portfolio %}
+          <p>{{info.portfolio}}</p>
+          {% endif %}
+          {% endfor %}
+        </div>
+
+        {% if portfolios %}
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">Securité</li>
+              <li data-filter=".filter-card">Desktop</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+        {% endif %}
+        
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+          {% for portfolio in portfolios %}
+          <div class="col-lg-4 col-md-6 portfolio-item {{portfolio.categorie}}">
+            <div class="portfolio-wrap">
+              {% if portfolio.image %}
+              <img class="img-fluid" src="{{portfolio.image.url}}" alt="">
+              {% else %}
+              <img class="img-fluid" src="{% static 'assets-portfolio/img/img-5.jpg'%}" alt="">
+              {% endif %}
+              <div class="portfolio-links">
+                <a href="{{portfolio.image.url}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{portfolio.titre}}"><i class="bx bx-plus"></i></a>
+                {% if portfolio.url %}
+                <a href="{% if portfolio.url %}{{portfolio.url}}{% else %}#!{% endif %}" {% if portfolio.url %} target="_blank" {% endif %} title="More Details"><i class="bx bx-link"></i></a>
+                {% else %}
+                <a href="{% if portfolio.lien %}{{portfolio.lien}}{% else %}#!{% endif %}" {% if portfolio.lien %} target="_blank" {% endif %} title="More Details"><i class="bx bx-link"></i></a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+

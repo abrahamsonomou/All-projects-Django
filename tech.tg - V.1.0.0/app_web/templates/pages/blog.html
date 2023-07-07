@@ -1,0 +1,88 @@
+{% extends 'includes/_base_pages.html' %}
+{% block title %}SONOMOU.TECH - Blog{% endblock title %}
+{% block bread1 %}Blog{% endblock bread1 %}
+{% block bread2 %}Blog{% endblock bread2 %}
+
+{% block content %}
+{% load static %}
+
+   <!-- ======= Blog Section ======= -->
+   <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row g-5">
+
+        <div class="col-lg-8">
+
+          <div class="row gy-4 posts-list">
+
+
+{% for article in articles %}
+            <div class="col-lg-6">
+              <article class="d-flex flex-column">
+
+                <div class="post-img">
+                  <img src="{{article.image.url}}" alt="" class="img-fluid">
+                </div>
+
+                <h2 class="title">
+                  <a href="{% url 'detail_article' article.slug %}">{{article.titre|truncatechars:30}}</a>
+                </h2>
+
+                <div class="meta-top">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="{% url 'detail_article' article.slug %}">{{article.auteur}}</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="{% url 'detail_article' article.slug %}">{{article.created|timesince|truncatechars:15}}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clipboard-check"></i> <a href="{% url 'detail_article' article.slug %}"><a href="#"> {{article.categorie}}</a></a></li>
+                  </ul>
+                </div>
+
+                <div class="content">
+                  <p>
+                      {{article.description1|truncatechars:100}}
+                  </p>
+                </div>
+
+                <div class="read-more mt-auto align-self-end">
+                  <a href="{% url 'detail_article' article.slug %}">Read More ...</a>
+                </div>
+
+              </article>
+            </div><!-- End post list item -->
+
+            {% endfor %}
+          </div><!-- End blog posts list -->
+      {% if articles|length %}
+          <!-- Pagination -->
+          {% include "includes/_pagination.html" with page=articles %}
+   
+        </div>
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+
+ 
+            {% comment %} recherche {% endcomment %}
+            {% include 'includes/recherche.html' %}
+
+            {% comment %} categorie {% endcomment %}
+            {% include 'includes/cat.html' %}
+
+            {% comment %} recents articles {% endcomment %}
+            {% include 'includes/recent_articles.html' %}
+
+            {% comment %} tag {% endcomment %}
+            {% include 'includes/tag.html' %}
+
+          </div><!-- End Blog Sidebar -->
+
+        </div>
+
+      </div>
+      {% endif %}
+    </div>
+  </section><!-- End Blog Section -->
+
+  
+{% endblock content %}

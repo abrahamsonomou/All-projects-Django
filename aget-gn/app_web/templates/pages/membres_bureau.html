@@ -1,0 +1,97 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Les membres du bureau | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+      <div class="row">
+       
+        <div class="col-12 col-md-12 col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <h4>Les membres du bureau de l'AGET</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+  
+                {% if membres_bureau|length %}
+                {% for membre in membres_bureau%}
+                <div class="col-12 col-md-12 col-lg-4">
+                  <div class="card author-box">
+                    <div class="card-body">
+                      <div class="author-box-center">
+                        <a href="#">
+                          {% if membre.membre.photo %}
+                             <img alt="image" src="{{membre.membre.photo.url}}" class="rounded-circle" width="35" data-toggle="title" title="">
+                        {% else %}
+                             <img alt="image" src="{% static 'assets-aget/img/users/default-avatar.png' %}" class="rounded-circle" width="35" data-toggle="title" title="">
+                       {% endif %} 
+                        <div class="clearfix"></div>
+                        <div class="author-box-name">
+                          {% if membre.membre.last_name %}
+                          <a href="#">{{membre.membre.last_name}} {{membre.membre.first_name}}</a>
+                          {% else %}
+                          <a href="#">{{membre.membre.username}}</a>
+                          {% endif %}
+                        </div>
+                        
+                        {% if membre.fonction %}
+                        <div class="author-box-job">{{membre.fonction}}</div>
+                        {% endif %}
+                      </div>
+                      <div class="text-center">
+                        <div class="author-box-description">
+                          
+                          {% if membre.membre.detail %}
+                            <p>
+                            {{membre.membre.detail|truncatechars:100}}
+                          </p>
+                          {% endif %}
+                        </div>
+                        <div class="mb-2 mt-3">
+                          
+                          {% if membre.membre.formation %}
+                          <div class="text-small font-weight-bold"> {{membre.membre.formation}}</div>
+                          {% endif %}
+                        </div>
+                        {% comment %} <a href="#" class="btn btn-social-icon mr-1 btn-facebook">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-social-icon mr-1 btn-twitter">
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-social-icon mr-1 btn-github">
+                          <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="btn btn-social-icon mr-1 btn-instagram">
+                          <i class="fab fa-instagram"></i>
+                        </a> {% endcomment %}
+                        <div class="w-100 d-sm-none"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="accordion">
+                    <div class="accordion-header bg-info" role="button" data-toggle="collapse" data-target="#panel-body-1"
+                        aria-expanded="true">
+                        <h4>Info !</h4>
+                    </div>
+                    <div class="accordion-body collapse show" id="panel-body-1" data-parent="#accordion">
+                        <p class="mb-0">Aucun membre enregistré encore !</p>
+                    </div>
+                    </div>
+                {% endif %}
+             
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock content %}
+
+ 

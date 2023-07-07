@@ -1,0 +1,101 @@
+{% extends 'includes/_base.html' %}
+{% load static %}
+{% block title %}Les membres du bureau | AGET{% endblock title %}
+{% block content %}
+<section class="section">
+    <div class="section-body">
+        <div class="row">
+            
+            <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+              <div class="card">
+                <div class="card-header">
+                  <h4>Ajout des membres du bureau</h4>
+                </div>
+                <div class="card-body">
+                  <div class="card-body pb-0">
+                   
+                <form class="" action="" method="POST" > 
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <label>Membre</label>
+                    {{form.membre}}
+                  </div>
+                  <div class="form-group">
+                    <label>Fonction</label>
+                    {{form.fonction}}
+                  </div>
+                  <div class="form-group">
+                    <label>Memdat</label>
+                    {{form.memdat}}
+                  </div>
+                  <button type="submit" class="btn btn-primary m-t-15 waves-effect">Ajouter</button>
+                  <input type="reset" class="btn btn-danger m-t-15" value="Effacer">
+
+                </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-8 col-md-12 col-12 col-sm-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Les membres du bureau de l'AGET</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <tr>
+                          <th>
+                            Photo
+                          </th>
+                          <th>Nom</th>
+                          <th>Poste</th>
+                          <th>Memdat</th>
+                          <th>Action</th>
+                        </tr>
+
+                        {% for membre in le_bureau %}
+                        <tr>
+                          <td >
+                            <a href="#">
+                             {% if membre.membre.photo %}
+                                <img alt="image" src="{{membre.membre.photo.url}}" class="rounded-circle" width="35" data-toggle="title" title="">
+                           {% else %}
+                                <img alt="image" src="{% static 'assets-aget/img/users/default-avatar.png' %}" class="rounded-circle" width="35" data-toggle="title" title="">
+                          {% endif %} 
+                                
+                              <span class="d-inline-block ml-1"></span>
+                            </a>
+                          </td>
+                          <td>{{membre.membre.last_name}} {{membre.membre.first_name}}</td>
+                          <td class="align-middle">
+                            {{membre.fonction}}
+                          </td>
+                          <td>{{membre.memdat}}</td>
+                          <td>
+                            {% if has_perm_change %}
+                            <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i
+                                class="fas fa-pencil-alt"></i></a>
+                                {% endif %}
+                                {% if has_perm_delete %}
+                            <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete"
+                              data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
+                              data-confirm-yes="alert('Deleted')" href="{% url 'bureau_delete' membre.pk %}"><i class="fas fa-trash"></i></a>
+                              {% endif %}
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+    </div>
+</section>
+{% endblock content %}
+
+ 
